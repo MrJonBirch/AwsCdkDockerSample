@@ -13,10 +13,10 @@ COPY ["SharedCode/SharedCode.csproj", "SharedCode/"]
 RUN dotnet restore "LocalStack/LocalStack.csproj"
 COPY . .
 WORKDIR "/src/LocalStack"
-RUN dotnet build "StudioApp.csproj" -c Release -o /app/build
+RUN dotnet build "LocalStack.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "StudioApp.csproj" -c Release -o /app/publish
+RUN dotnet publish "LocalStack.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
