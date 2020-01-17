@@ -1,0 +1,8 @@
+FROM localstack/localstack
+
+ENV SERVICES=s3,sqs,secretsmanager
+ENV AWS_DEFAULT_REGION=us-east-1
+ENV AWS_ACCESS_KEY_ID=testkey
+ENV AWS_SECRET_ACCESS_KEY=testsecret
+
+#EXPOSE 4567-4597

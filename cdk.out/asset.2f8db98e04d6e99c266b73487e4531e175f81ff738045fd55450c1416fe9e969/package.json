@@ -1,0 +1,15 @@
+{
+  "name": "studio",
+  "version": "1.0.0",
+  "description": "AWS CDK",
+  "main": "",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "synth": "cdk synth dotnet run -p ./AwsStack/AwsStack.csproj"
+  },
+  "homepage": "https://bitbucket.org/3dxmedia/studio-production#readme",
+  "devDependencies": {
+    "cdk": "^1.21.1"
+  }
+}

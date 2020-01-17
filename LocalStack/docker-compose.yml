@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+  localstack:
+    container_name: "localstack"
+    build:
+        context: .
+        dockerfile: Dockerfile.localstack
+    ports:
+      - "4567-4597:4567-4597"
+  mysqldb:
+    container_name: mysqldb
+    build:
+        context: .
+        dockerfile: Dockerfile.mysql
+    ports:
+        - "3306:3306"
+  mongodb:
+    container_name: mongodb
+    build:
+        context: .
+        dockerfile: Dockerfile.mongo
+    ports:
+        - "27017:27017"

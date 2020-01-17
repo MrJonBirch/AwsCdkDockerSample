@@ -1,0 +1,995 @@
+{
+  "Resources": {
+    "AppCluster99B78AC1": {
+      "Type": "AWS::ECS::Cluster"
+    },
+    "DevStackTaskDefTaskRoleD536D856": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      }
+    },
+    "DevStackTaskDef2D4B928F": {
+      "Type": "AWS::ECS::TaskDefinition",
+      "Properties": {
+        "ContainerDefinitions": [
+          {
+            "Essential": true,
+            "Image": {
+              "Fn::Join": [
+                "",
+                [
+                  "DummyAccountId.dkr.ecr.us-east-1.",
+                  {
+                    "Ref": "AWS::URLSuffix"
+                  },
+                  "/",
+                  {
+                    "Fn::Select": [
+                      0,
+                      {
+                        "Fn::Split": [
+                          "@sha256:",
+                          {
+                            "Ref": "AssetParameters2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969ImageNameD8963A71"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "@sha256:",
+                  {
+                    "Fn::Select": [
+                      1,
+                      {
+                        "Fn::Split": [
+                          "@sha256:",
+                          {
+                            "Ref": "AssetParameters2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969ImageNameD8963A71"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            "Name": "mysql",
+            "PortMappings": [
+              {
+                "ContainerPort": 3306,
+                "HostPort": 3306,
+                "Protocol": "tcp"
+              }
+            ]
+          },
+          {
+            "Essential": true,
+            "Image": {
+              "Fn::Join": [
+                "",
+                [
+                  "DummyAccountId.dkr.ecr.us-east-1.",
+                  {
+                    "Ref": "AWS::URLSuffix"
+                  },
+                  "/",
+                  {
+                    "Fn::Select": [
+                      0,
+                      {
+                        "Fn::Split": [
+                          "@sha256:",
+                          {
+                            "Ref": "AssetParameterse28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71ImageName6A8EEC47"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "@sha256:",
+                  {
+                    "Fn::Select": [
+                      1,
+                      {
+                        "Fn::Split": [
+                          "@sha256:",
+                          {
+                            "Ref": "AssetParameterse28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71ImageName6A8EEC47"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            "Name": "mongodb",
+            "PortMappings": [
+              {
+                "ContainerPort": 27017,
+                "HostPort": 27017,
+                "Protocol": "tcp"
+              }
+            ]
+          },
+          {
+            "Essential": true,
+            "Image": {
+              "Fn::Join": [
+                "",
+                [
+                  "DummyAccountId.dkr.ecr.us-east-1.",
+                  {
+                    "Ref": "AWS::URLSuffix"
+                  },
+                  "/",
+                  {
+                    "Fn::Select": [
+                      0,
+                      {
+                        "Fn::Split": [
+                          "@sha256:",
+                          {
+                            "Ref": "AssetParameters15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820ImageNameDDEE43ED"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "@sha256:",
+                  {
+                    "Fn::Select": [
+                      1,
+                      {
+                        "Fn::Split": [
+                          "@sha256:",
+                          {
+                            "Ref": "AssetParameters15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820ImageNameDDEE43ED"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            "Name": "localstack",
+            "PortMappings": [
+              {
+                "ContainerPort": 4572,
+                "HostPort": 4572,
+                "Protocol": "tcp"
+              },
+              {
+                "ContainerPort": 4576,
+                "HostPort": 4576,
+                "Protocol": "tcp"
+              },
+              {
+                "ContainerPort": 4584,
+                "HostPort": 4584,
+                "Protocol": "tcp"
+              }
+            ]
+          },
+          {
+            "DependsOn": [
+              {
+                "Condition": "START",
+                "ContainerName": "mysql"
+              },
+              {
+                "Condition": "START",
+                "ContainerName": "mongodb"
+              },
+              {
+                "Condition": "START",
+                "ContainerName": "localstack"
+              }
+            ],
+            "Essential": true,
+            "Image": {
+              "Fn::Join": [
+                "",
+                [
+                  "DummyAccountId.dkr.ecr.us-east-1.",
+                  {
+                    "Ref": "AWS::URLSuffix"
+                  },
+                  "/",
+                  {
+                    "Fn::Select": [
+                      0,
+                      {
+                        "Fn::Split": [
+                          "@sha256:",
+                          {
+                            "Ref": "AssetParametersc5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749ImageName406CFC29"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "@sha256:",
+                  {
+                    "Fn::Select": [
+                      1,
+                      {
+                        "Fn::Split": [
+                          "@sha256:",
+                          {
+                            "Ref": "AssetParametersc5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749ImageName406CFC29"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              ]
+            },
+            "Name": "schemaBuilder"
+          }
+        ],
+        "Cpu": "256",
+        "ExecutionRoleArn": {
+          "Fn::GetAtt": [
+            "DevStackTaskDefExecutionRole927ADE9D",
+            "Arn"
+          ]
+        },
+        "Family": "DevStackDevStackTaskDefAEF55912",
+        "Memory": "512",
+        "NetworkMode": "awsvpc",
+        "RequiresCompatibilities": [
+          "FARGATE"
+        ],
+        "TaskRoleArn": {
+          "Fn::GetAtt": [
+            "DevStackTaskDefTaskRoleD536D856",
+            "Arn"
+          ]
+        }
+      }
+    },
+    "DevStackTaskDefmysqlAssetImageAdoptRepository178905EB": {
+      "Type": "Custom::ECRAdoptedRepository",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c52BE89E9",
+            "Arn"
+          ]
+        },
+        "RepositoryName": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::Split": [
+                "@sha256:",
+                {
+                  "Ref": "AssetParameters2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969ImageNameD8963A71"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "DependsOn": [
+        "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleDefaultPolicy6BC8737C",
+        "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17"
+      ],
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete"
+    },
+    "DevStackTaskDefExecutionRole927ADE9D": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ecs-tasks.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      }
+    },
+    "DevStackTaskDefExecutionRoleDefaultPolicy22F8C33B": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:GetDownloadUrlForLayer",
+                "ecr:BatchGetImage"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":ecr:us-east-1:DummyAccountId:repository/",
+                    {
+                      "Fn::GetAtt": [
+                        "DevStackTaskDefmysqlAssetImageAdoptRepository178905EB",
+                        "RepositoryName"
+                      ]
+                    }
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": "ecr:GetAuthorizationToken",
+              "Effect": "Allow",
+              "Resource": "*"
+            },
+            {
+              "Action": [
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:GetDownloadUrlForLayer",
+                "ecr:BatchGetImage"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":ecr:us-east-1:DummyAccountId:repository/",
+                    {
+                      "Fn::GetAtt": [
+                        "DevStackTaskDefmongodbAssetImageAdoptRepositoryB7105682",
+                        "RepositoryName"
+                      ]
+                    }
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": [
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:GetDownloadUrlForLayer",
+                "ecr:BatchGetImage"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":ecr:us-east-1:DummyAccountId:repository/",
+                    {
+                      "Fn::GetAtt": [
+                        "DevStackTaskDeflocalstackAssetImageAdoptRepository5A4CA828",
+                        "RepositoryName"
+                      ]
+                    }
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": [
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:GetDownloadUrlForLayer",
+                "ecr:BatchGetImage"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":ecr:us-east-1:DummyAccountId:repository/",
+                    {
+                      "Fn::GetAtt": [
+                        "DevStackTaskDefschemaBuilderAssetImageAdoptRepository4F6FD247",
+                        "RepositoryName"
+                      ]
+                    }
+                  ]
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "DevStackTaskDefExecutionRoleDefaultPolicy22F8C33B",
+        "Roles": [
+          {
+            "Ref": "DevStackTaskDefExecutionRole927ADE9D"
+          }
+        ]
+      }
+    },
+    "DevStackTaskDefmongodbAssetImageAdoptRepositoryB7105682": {
+      "Type": "Custom::ECRAdoptedRepository",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c52BE89E9",
+            "Arn"
+          ]
+        },
+        "RepositoryName": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::Split": [
+                "@sha256:",
+                {
+                  "Ref": "AssetParameterse28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71ImageName6A8EEC47"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "DependsOn": [
+        "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleDefaultPolicy6BC8737C",
+        "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17"
+      ],
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete"
+    },
+    "DevStackTaskDeflocalstackAssetImageAdoptRepository5A4CA828": {
+      "Type": "Custom::ECRAdoptedRepository",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c52BE89E9",
+            "Arn"
+          ]
+        },
+        "RepositoryName": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::Split": [
+                "@sha256:",
+                {
+                  "Ref": "AssetParameters15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820ImageNameDDEE43ED"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "DependsOn": [
+        "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleDefaultPolicy6BC8737C",
+        "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17"
+      ],
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete"
+    },
+    "DevStackTaskDefschemaBuilderAssetImageAdoptRepository4F6FD247": {
+      "Type": "Custom::ECRAdoptedRepository",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c52BE89E9",
+            "Arn"
+          ]
+        },
+        "RepositoryName": {
+          "Fn::Select": [
+            0,
+            {
+              "Fn::Split": [
+                "@sha256:",
+                {
+                  "Ref": "AssetParametersc5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749ImageName406CFC29"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "DependsOn": [
+        "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleDefaultPolicy6BC8737C",
+        "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17"
+      ],
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete"
+    },
+    "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleDefaultPolicy6BC8737C": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "ecr:GetRepositoryPolicy",
+                "ecr:SetRepositoryPolicy",
+                "ecr:DeleteRepository",
+                "ecr:ListImages",
+                "ecr:BatchDeleteImage"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":ecr:us-east-1:DummyAccountId:repository/",
+                    {
+                      "Fn::Select": [
+                        0,
+                        {
+                          "Fn::Split": [
+                            "@sha256:",
+                            {
+                              "Ref": "AssetParameters2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969ImageNameD8963A71"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": [
+                "ecr:GetRepositoryPolicy",
+                "ecr:SetRepositoryPolicy",
+                "ecr:DeleteRepository",
+                "ecr:ListImages",
+                "ecr:BatchDeleteImage"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":ecr:us-east-1:DummyAccountId:repository/",
+                    {
+                      "Fn::Select": [
+                        0,
+                        {
+                          "Fn::Split": [
+                            "@sha256:",
+                            {
+                              "Ref": "AssetParameterse28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71ImageName6A8EEC47"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": [
+                "ecr:GetRepositoryPolicy",
+                "ecr:SetRepositoryPolicy",
+                "ecr:DeleteRepository",
+                "ecr:ListImages",
+                "ecr:BatchDeleteImage"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":ecr:us-east-1:DummyAccountId:repository/",
+                    {
+                      "Fn::Select": [
+                        0,
+                        {
+                          "Fn::Split": [
+                            "@sha256:",
+                            {
+                              "Ref": "AssetParameters15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820ImageNameDDEE43ED"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": [
+                "ecr:GetRepositoryPolicy",
+                "ecr:SetRepositoryPolicy",
+                "ecr:DeleteRepository",
+                "ecr:ListImages",
+                "ecr:BatchDeleteImage"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":ecr:us-east-1:DummyAccountId:repository/",
+                    {
+                      "Fn::Select": [
+                        0,
+                        {
+                          "Fn::Split": [
+                            "@sha256:",
+                            {
+                              "Ref": "AssetParametersc5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749ImageName406CFC29"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleDefaultPolicy6BC8737C",
+        "Roles": [
+          {
+            "Ref": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17"
+          }
+        ]
+      }
+    },
+    "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c52BE89E9": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3Bucket7CBBD48C"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3VersionKey87E3D057"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3VersionKey87E3D057"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Handler": "handler.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs10.x",
+        "Timeout": 300
+      },
+      "DependsOn": [
+        "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleDefaultPolicy6BC8737C",
+        "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17"
+      ]
+    },
+    "DevStackServiceLB4C194C2B": {
+      "Type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+      "Properties": {
+        "Scheme": "internet-facing",
+        "SecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "DevStackServiceLBSecurityGroup8C3A7A61",
+              "GroupId"
+            ]
+          }
+        ],
+        "Subnets": [
+          "s-12345",
+          "s-67890"
+        ],
+        "Type": "application"
+      }
+    },
+    "DevStackServiceLBSecurityGroup8C3A7A61": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Automatically created Security Group for ELB DevStackDevStackServiceLB0D201EAF",
+        "SecurityGroupIngress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow from anyone on port 80",
+            "FromPort": 80,
+            "IpProtocol": "tcp",
+            "ToPort": 80
+          }
+        ],
+        "VpcId": "vpc-12345"
+      }
+    },
+    "DevStackServiceLBSecurityGrouptoDevStackDevStackServiceSecurityGroupE13EF5D233062F66017F": {
+      "Type": "AWS::EC2::SecurityGroupEgress",
+      "Properties": {
+        "GroupId": {
+          "Fn::GetAtt": [
+            "DevStackServiceLBSecurityGroup8C3A7A61",
+            "GroupId"
+          ]
+        },
+        "IpProtocol": "tcp",
+        "Description": "Load balancer to target",
+        "DestinationSecurityGroupId": {
+          "Fn::GetAtt": [
+            "DevStackServiceSecurityGroup1A43CA9B",
+            "GroupId"
+          ]
+        },
+        "FromPort": 3306,
+        "ToPort": 3306
+      }
+    },
+    "DevStackServiceLBPublicListenerDADE29AF": {
+      "Type": "AWS::ElasticLoadBalancingV2::Listener",
+      "Properties": {
+        "DefaultActions": [
+          {
+            "TargetGroupArn": {
+              "Ref": "DevStackServiceLBPublicListenerECSGroup11507B86"
+            },
+            "Type": "forward"
+          }
+        ],
+        "LoadBalancerArn": {
+          "Ref": "DevStackServiceLB4C194C2B"
+        },
+        "Port": 80,
+        "Protocol": "HTTP"
+      }
+    },
+    "DevStackServiceLBPublicListenerECSGroup11507B86": {
+      "Type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+      "Properties": {
+        "Port": 80,
+        "Protocol": "HTTP",
+        "TargetType": "ip",
+        "VpcId": "vpc-12345"
+      }
+    },
+    "DevStackService319AF02B": {
+      "Type": "AWS::ECS::Service",
+      "Properties": {
+        "Cluster": {
+          "Ref": "AppCluster99B78AC1"
+        },
+        "DeploymentConfiguration": {
+          "MaximumPercent": 200,
+          "MinimumHealthyPercent": 50
+        },
+        "DesiredCount": 1,
+        "EnableECSManagedTags": false,
+        "HealthCheckGracePeriodSeconds": 60,
+        "LaunchType": "FARGATE",
+        "LoadBalancers": [
+          {
+            "ContainerName": "mysql",
+            "ContainerPort": 3306,
+            "TargetGroupArn": {
+              "Ref": "DevStackServiceLBPublicListenerECSGroup11507B86"
+            }
+          }
+        ],
+        "NetworkConfiguration": {
+          "AwsvpcConfiguration": {
+            "AssignPublicIp": "ENABLED",
+            "SecurityGroups": [
+              {
+                "Fn::GetAtt": [
+                  "DevStackServiceSecurityGroup1A43CA9B",
+                  "GroupId"
+                ]
+              }
+            ],
+            "Subnets": [
+              "s-12345",
+              "s-67890"
+            ]
+          }
+        },
+        "TaskDefinition": {
+          "Ref": "DevStackTaskDef2D4B928F"
+        }
+      },
+      "DependsOn": [
+        "DevStackServiceLBPublicListenerECSGroup11507B86",
+        "DevStackServiceLBPublicListenerDADE29AF"
+      ]
+    },
+    "DevStackServiceSecurityGroup1A43CA9B": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "DevStack/DevStackService/Service/SecurityGroup",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "VpcId": "vpc-12345"
+      }
+    },
+    "DevStackServiceSecurityGroupfromDevStackDevStackServiceLBSecurityGroup6E090AA5330690D98828": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "IpProtocol": "tcp",
+        "Description": "Load balancer to target",
+        "FromPort": 3306,
+        "GroupId": {
+          "Fn::GetAtt": [
+            "DevStackServiceSecurityGroup1A43CA9B",
+            "GroupId"
+          ]
+        },
+        "SourceSecurityGroupId": {
+          "Fn::GetAtt": [
+            "DevStackServiceLBSecurityGroup8C3A7A61",
+            "GroupId"
+          ]
+        },
+        "ToPort": 3306
+      }
+    }
+  },
+  "Parameters": {
+    "AssetParameters2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969ImageNameD8963A71": {
+      "Type": "String",
+      "Description": "ECR repository name and tag for asset \"2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969\""
+    },
+    "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3Bucket7CBBD48C": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7\""
+    },
+    "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3VersionKey87E3D057": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7\""
+    },
+    "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7ArtifactHash3E217B68": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7\""
+    },
+    "AssetParameterse28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71ImageName6A8EEC47": {
+      "Type": "String",
+      "Description": "ECR repository name and tag for asset \"e28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71\""
+    },
+    "AssetParameters15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820ImageNameDDEE43ED": {
+      "Type": "String",
+      "Description": "ECR repository name and tag for asset \"15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820\""
+    },
+    "AssetParametersc5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749ImageName406CFC29": {
+      "Type": "String",
+      "Description": "ECR repository name and tag for asset \"c5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749\""
+    }
+  },
+  "Outputs": {
+    "DevStackServiceLoadBalancerDNS2DA4E493": {
+      "Value": {
+        "Fn::GetAtt": [
+          "DevStackServiceLB4C194C2B",
+          "DNSName"
+        ]
+      }
+    },
+    "DevStackServiceServiceURLF254FD07": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "http://",
+            {
+              "Fn::GetAtt": [
+                "DevStackServiceLB4C194C2B",
+                "DNSName"
+              ]
+            }
+          ]
+        ]
+      }
+    }
+  }
+}

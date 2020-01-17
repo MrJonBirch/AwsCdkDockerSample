@@ -1,0 +1,10 @@
+C:\Users\jbirch\source\repos\AwsCdkDockerSample\DockerProject1\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\jbirch\source\repos\AwsCdkDockerSample\DockerProject1\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\jbirch\source\repos\AwsCdkDockerSample\DockerProject1\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\jbirch\source\repos\AwsCdkDockerSample\DockerProject1\bin\Debug\netcoreapp3.1\DockerProject1.exe
+C:\Users\jbirch\source\repos\AwsCdkDockerSample\DockerProject1\obj\Debug\netcoreapp3.1\DockerProject1.csprojAssemblyReference.cache
+C:\Users\jbirch\source\repos\AwsCdkDockerSample\DockerProject1\obj\Debug\netcoreapp3.1\staticwebassets\DockerProject1.StaticWebAssets.Manifest.cache
+C:\Users\jbirch\source\repos\AwsCdkDockerSample\DockerProject1\obj\Debug\netcoreapp3.1\staticwebassets\DockerProject1.StaticWebAssets.xml
+C:\Users\jbirch\source\repos\AwsCdkDockerSample\DockerProject1\obj\Debug\netcoreapp3.1\DockerProject1.AssemblyInfoInputs.cache
+C:\Users\jbirch\source\repos\AwsCdkDockerSample\DockerProject1\obj\Debug\netcoreapp3.1\DockerProject1.AssemblyInfo.cs
+C:\Users\jbirch\source\repos\AwsCdkDockerSample\DockerProject1\obj\Debug\netcoreapp3.1\DockerProject1.RazorTargetAssemblyInfo.cache

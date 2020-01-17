@@ -1,0 +1,2028 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree"
+      },
+      "AppStack": {
+        "id": "AppStack",
+        "path": "AppStack",
+        "children": {
+          "DefaultVpc": {
+            "id": "DefaultVpc",
+            "path": "AppStack/DefaultVpc",
+            "children": {
+              "PublicSubnet1": {
+                "id": "PublicSubnet1",
+                "path": "AppStack/DefaultVpc/PublicSubnet1"
+              },
+              "PublicSubnet2": {
+                "id": "PublicSubnet2",
+                "path": "AppStack/DefaultVpc/PublicSubnet2"
+              },
+              "PrivateSubnet1": {
+                "id": "PrivateSubnet1",
+                "path": "AppStack/DefaultVpc/PrivateSubnet1"
+              },
+              "PrivateSubnet2": {
+                "id": "PrivateSubnet2",
+                "path": "AppStack/DefaultVpc/PrivateSubnet2"
+              }
+            }
+          },
+          "AppCluster": {
+            "id": "AppCluster",
+            "path": "AppStack/AppCluster",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "AppStack/AppCluster/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::Cluster",
+                  "aws:cdk:cloudformation:props": {}
+                }
+              }
+            }
+          },
+          "AppRole": {
+            "id": "AppRole",
+            "path": "AppStack/AppRole",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "AppStack/AppRole/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                  "aws:cdk:cloudformation:props": {
+                    "assumeRolePolicyDocument": {
+                      "Statement": [
+                        {
+                          "Action": "sts:AssumeRole",
+                          "Effect": "Allow",
+                          "Principal": {
+                            "Service": "ecs-tasks.amazonaws.com"
+                          }
+                        }
+                      ],
+                      "Version": "2012-10-17"
+                    },
+                    "managedPolicyArns": [
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/TranslateFullAccess"
+                          ]
+                        ]
+                      },
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "arn:",
+                            {
+                              "Ref": "AWS::Partition"
+                            },
+                            ":iam::aws:policy/AmazonS3FullAccess"
+                          ]
+                        ]
+                      }
+                    ],
+                    "roleName": "AppRole"
+                  }
+                }
+              }
+            }
+          },
+          "AppService": {
+            "id": "AppService",
+            "path": "AppStack/AppService",
+            "children": {
+              "LB": {
+                "id": "LB",
+                "path": "AppStack/AppService/LB",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "AppStack/AppService/LB/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                      "aws:cdk:cloudformation:props": {
+                        "scheme": "internet-facing",
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "AppServiceLBSecurityGroupB5DEF339",
+                              "GroupId"
+                            ]
+                          }
+                        ],
+                        "subnets": [
+                          "s-12345",
+                          "s-67890"
+                        ],
+                        "type": "application"
+                      }
+                    }
+                  },
+                  "SecurityGroup": {
+                    "id": "SecurityGroup",
+                    "path": "AppStack/AppService/LB/SecurityGroup",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "AppStack/AppService/LB/SecurityGroup/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "groupDescription": "Automatically created Security Group for ELB AppStackAppServiceLB64523494",
+                            "securityGroupIngress": [
+                              {
+                                "cidrIp": "0.0.0.0/0",
+                                "ipProtocol": "tcp",
+                                "fromPort": 80,
+                                "toPort": 80,
+                                "description": "Allow from anyone on port 80"
+                              }
+                            ],
+                            "vpcId": "vpc-12345"
+                          }
+                        }
+                      },
+                      "to AppStackAppServiceSecurityGroupD9B6A043:80": {
+                        "id": "to AppStackAppServiceSecurityGroupD9B6A043:80",
+                        "path": "AppStack/AppService/LB/SecurityGroup/to AppStackAppServiceSecurityGroupD9B6A043:80",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupEgress",
+                          "aws:cdk:cloudformation:props": {
+                            "groupId": {
+                              "Fn::GetAtt": [
+                                "AppServiceLBSecurityGroupB5DEF339",
+                                "GroupId"
+                              ]
+                            },
+                            "ipProtocol": "tcp",
+                            "description": "Load balancer to target",
+                            "destinationSecurityGroupId": {
+                              "Fn::GetAtt": [
+                                "AppServiceSecurityGroup8261DDA4",
+                                "GroupId"
+                              ]
+                            },
+                            "fromPort": 80,
+                            "toPort": 80
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "PublicListener": {
+                    "id": "PublicListener",
+                    "path": "AppStack/AppService/LB/PublicListener",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "AppStack/AppService/LB/PublicListener/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                          "aws:cdk:cloudformation:props": {
+                            "defaultActions": [
+                              {
+                                "targetGroupArn": {
+                                  "Ref": "AppServiceLBPublicListenerECSGroup41DB273F"
+                                },
+                                "type": "forward"
+                              }
+                            ],
+                            "loadBalancerArn": {
+                              "Ref": "AppServiceLB2EFD717F"
+                            },
+                            "port": 80,
+                            "protocol": "HTTP"
+                          }
+                        }
+                      },
+                      "ECSGroup": {
+                        "id": "ECSGroup",
+                        "path": "AppStack/AppService/LB/PublicListener/ECSGroup",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "AppStack/AppService/LB/PublicListener/ECSGroup/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                              "aws:cdk:cloudformation:props": {
+                                "port": 80,
+                                "protocol": "HTTP",
+                                "targetType": "ip",
+                                "vpcId": "vpc-12345"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "LoadBalancerDNS": {
+                "id": "LoadBalancerDNS",
+                "path": "AppStack/AppService/LoadBalancerDNS"
+              },
+              "ServiceURL": {
+                "id": "ServiceURL",
+                "path": "AppStack/AppService/ServiceURL"
+              },
+              "TaskDef": {
+                "id": "TaskDef",
+                "path": "AppStack/AppService/TaskDef",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "AppStack/AppService/TaskDef/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ECS::TaskDefinition",
+                      "aws:cdk:cloudformation:props": {
+                        "containerDefinitions": [
+                          {
+                            "essential": true,
+                            "image": {
+                              "Fn::Join": [
+                                "",
+                                [
+                                  "DummyAccountId.dkr.ecr.us-east-1.",
+                                  {
+                                    "Ref": "AWS::URLSuffix"
+                                  },
+                                  "/",
+                                  {
+                                    "Fn::Select": [
+                                      0,
+                                      {
+                                        "Fn::Split": [
+                                          "@sha256:",
+                                          {
+                                            "Ref": "AssetParameters79452e39b3d4fc2df04cf69f52a637fe5822ba5ef5b86733e471b5089017057dImageName3509FBEE"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  },
+                                  "@sha256:",
+                                  {
+                                    "Fn::Select": [
+                                      1,
+                                      {
+                                        "Fn::Split": [
+                                          "@sha256:",
+                                          {
+                                            "Ref": "AssetParameters79452e39b3d4fc2df04cf69f52a637fe5822ba5ef5b86733e471b5089017057dImageName3509FBEE"
+                                          }
+                                        ]
+                                      }
+                                    ]
+                                  }
+                                ]
+                              ]
+                            },
+                            "name": "web",
+                            "portMappings": [
+                              {
+                                "containerPort": 80,
+                                "protocol": "tcp"
+                              }
+                            ],
+                            "logConfiguration": {
+                              "logDriver": "awslogs",
+                              "options": {
+                                "awslogs-group": {
+                                  "Ref": "AppServiceTaskDefwebLogGroup066CA1AB"
+                                },
+                                "awslogs-stream-prefix": "AppService",
+                                "awslogs-region": "us-east-1"
+                              }
+                            }
+                          }
+                        ],
+                        "cpu": "256",
+                        "executionRoleArn": {
+                          "Fn::GetAtt": [
+                            "AppServiceTaskDefExecutionRoleD1C756A8",
+                            "Arn"
+                          ]
+                        },
+                        "family": "AppStackAppServiceTaskDefD5AE5024",
+                        "memory": "2048",
+                        "networkMode": "awsvpc",
+                        "requiresCompatibilities": [
+                          "FARGATE"
+                        ],
+                        "taskRoleArn": {
+                          "Fn::GetAtt": [
+                            "AppRoleDC883459",
+                            "Arn"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "web": {
+                    "id": "web",
+                    "path": "AppStack/AppService/TaskDef/web",
+                    "children": {
+                      "AssetImage": {
+                        "id": "AssetImage",
+                        "path": "AppStack/AppService/TaskDef/web/AssetImage",
+                        "children": {
+                          "Staging": {
+                            "id": "Staging",
+                            "path": "AppStack/AppService/TaskDef/web/AssetImage/Staging"
+                          },
+                          "AdoptRepository": {
+                            "id": "AdoptRepository",
+                            "path": "AppStack/AppService/TaskDef/web/AssetImage/AdoptRepository",
+                            "children": {
+                              "Function": {
+                                "id": "Function",
+                                "path": "AppStack/AppService/TaskDef/web/AssetImage/AdoptRepository/Function"
+                              },
+                              "Resource": {
+                                "id": "Resource",
+                                "path": "AppStack/AppService/TaskDef/web/AssetImage/AdoptRepository/Resource",
+                                "children": {
+                                  "Default": {
+                                    "id": "Default",
+                                    "path": "AppStack/AppService/TaskDef/web/AssetImage/AdoptRepository/Resource/Default"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "LogGroup": {
+                        "id": "LogGroup",
+                        "path": "AppStack/AppService/TaskDef/web/LogGroup",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "AppStack/AppService/TaskDef/web/LogGroup/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::Logs::LogGroup",
+                              "aws:cdk:cloudformation:props": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "ExecutionRole": {
+                    "id": "ExecutionRole",
+                    "path": "AppStack/AppService/TaskDef/ExecutionRole",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "AppStack/AppService/TaskDef/ExecutionRole/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                          "aws:cdk:cloudformation:props": {
+                            "assumeRolePolicyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": "sts:AssumeRole",
+                                  "Effect": "Allow",
+                                  "Principal": {
+                                    "Service": "ecs-tasks.amazonaws.com"
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            }
+                          }
+                        }
+                      },
+                      "DefaultPolicy": {
+                        "id": "DefaultPolicy",
+                        "path": "AppStack/AppService/TaskDef/ExecutionRole/DefaultPolicy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "AppStack/AppService/TaskDef/ExecutionRole/DefaultPolicy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                              "aws:cdk:cloudformation:props": {
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": [
+                                        "ecr:BatchCheckLayerAvailability",
+                                        "ecr:GetDownloadUrlForLayer",
+                                        "ecr:BatchGetImage"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Fn::Join": [
+                                          "",
+                                          [
+                                            "arn:",
+                                            {
+                                              "Ref": "AWS::Partition"
+                                            },
+                                            ":ecr:us-east-1:DummyAccountId:repository/",
+                                            {
+                                              "Fn::GetAtt": [
+                                                "AppServiceTaskDefwebAssetImageAdoptRepository8294813B",
+                                                "RepositoryName"
+                                              ]
+                                            }
+                                          ]
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "Action": "ecr:GetAuthorizationToken",
+                                      "Effect": "Allow",
+                                      "Resource": "*"
+                                    },
+                                    {
+                                      "Action": [
+                                        "logs:CreateLogStream",
+                                        "logs:PutLogEvents"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Resource": {
+                                        "Fn::GetAtt": [
+                                          "AppServiceTaskDefwebLogGroup066CA1AB",
+                                          "Arn"
+                                        ]
+                                      }
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                },
+                                "policyName": "AppServiceTaskDefExecutionRoleDefaultPolicy1C514EB9",
+                                "roles": [
+                                  {
+                                    "Ref": "AppServiceTaskDefExecutionRoleD1C756A8"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Service": {
+                "id": "Service",
+                "path": "AppStack/AppService/Service",
+                "children": {
+                  "Service": {
+                    "id": "Service",
+                    "path": "AppStack/AppService/Service/Service",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ECS::Service",
+                      "aws:cdk:cloudformation:props": {
+                        "cluster": {
+                          "Ref": "AppCluster99B78AC1"
+                        },
+                        "deploymentConfiguration": {
+                          "maximumPercent": 200,
+                          "minimumHealthyPercent": 50
+                        },
+                        "desiredCount": 1,
+                        "enableEcsManagedTags": false,
+                        "healthCheckGracePeriodSeconds": 60,
+                        "launchType": "FARGATE",
+                        "loadBalancers": [
+                          {
+                            "targetGroupArn": {
+                              "Ref": "AppServiceLBPublicListenerECSGroup41DB273F"
+                            },
+                            "containerName": "web",
+                            "containerPort": 80
+                          }
+                        ],
+                        "networkConfiguration": {
+                          "awsvpcConfiguration": {
+                            "assignPublicIp": "ENABLED",
+                            "subnets": [
+                              "s-12345",
+                              "s-67890"
+                            ],
+                            "securityGroups": [
+                              {
+                                "Fn::GetAtt": [
+                                  "AppServiceSecurityGroup8261DDA4",
+                                  "GroupId"
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "taskDefinition": {
+                          "Ref": "AppServiceTaskDefD07EA99B"
+                        }
+                      }
+                    }
+                  },
+                  "SecurityGroup": {
+                    "id": "SecurityGroup",
+                    "path": "AppStack/AppService/Service/SecurityGroup",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "AppStack/AppService/Service/SecurityGroup/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "groupDescription": "AppStack/AppService/Service/SecurityGroup",
+                            "securityGroupEgress": [
+                              {
+                                "cidrIp": "0.0.0.0/0",
+                                "description": "Allow all outbound traffic by default",
+                                "ipProtocol": "-1"
+                              }
+                            ],
+                            "vpcId": "vpc-12345"
+                          }
+                        }
+                      },
+                      "from AppStackAppServiceLBSecurityGroup6E7764A6:80": {
+                        "id": "from AppStackAppServiceLBSecurityGroup6E7764A6:80",
+                        "path": "AppStack/AppService/Service/SecurityGroup/from AppStackAppServiceLBSecurityGroup6E7764A6:80",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                          "aws:cdk:cloudformation:props": {
+                            "ipProtocol": "tcp",
+                            "description": "Load balancer to target",
+                            "fromPort": 80,
+                            "groupId": {
+                              "Fn::GetAtt": [
+                                "AppServiceSecurityGroup8261DDA4",
+                                "GroupId"
+                              ]
+                            },
+                            "sourceSecurityGroupId": {
+                              "Fn::GetAtt": [
+                                "AppServiceLBSecurityGroupB5DEF339",
+                                "GroupId"
+                              ]
+                            },
+                            "toPort": 80
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "AssetParameters": {
+            "id": "AssetParameters",
+            "path": "AppStack/AssetParameters",
+            "children": {
+              "79452e39b3d4fc2df04cf69f52a637fe5822ba5ef5b86733e471b5089017057d": {
+                "id": "79452e39b3d4fc2df04cf69f52a637fe5822ba5ef5b86733e471b5089017057d",
+                "path": "AppStack/AssetParameters/79452e39b3d4fc2df04cf69f52a637fe5822ba5ef5b86733e471b5089017057d",
+                "children": {
+                  "ImageName": {
+                    "id": "ImageName",
+                    "path": "AppStack/AssetParameters/79452e39b3d4fc2df04cf69f52a637fe5822ba5ef5b86733e471b5089017057d/ImageName"
+                  }
+                }
+              },
+              "a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7": {
+                "id": "a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7",
+                "path": "AppStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "AppStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "AppStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "AppStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7/ArtifactHash"
+                  }
+                }
+              }
+            }
+          },
+          "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c": {
+            "id": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c",
+            "path": "AppStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "AppStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "AppStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "AppStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "AppStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "ecr:GetRepositoryPolicy",
+                                    "ecr:SetRepositoryPolicy",
+                                    "ecr:DeleteRepository",
+                                    "ecr:ListImages",
+                                    "ecr:BatchDeleteImage"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":ecr:us-east-1:DummyAccountId:repository/",
+                                        {
+                                          "Fn::Select": [
+                                            0,
+                                            {
+                                              "Fn::Split": [
+                                                "@sha256:",
+                                                {
+                                                  "Ref": "AssetParameters79452e39b3d4fc2df04cf69f52a637fe5822ba5ef5b86733e471b5089017057dImageName3509FBEE"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleDefaultPolicy6BC8737C",
+                            "roles": [
+                              {
+                                "Ref": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "AppStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "AppStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "AppStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "AppStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3Bucket7CBBD48C"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3VersionKey87E3D057"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3VersionKey87E3D057"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "handler.handler",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "nodejs10.x",
+                    "timeout": 300
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "DevStack": {
+        "id": "DevStack",
+        "path": "DevStack",
+        "children": {
+          "DefaultVpc": {
+            "id": "DefaultVpc",
+            "path": "DevStack/DefaultVpc",
+            "children": {
+              "PublicSubnet1": {
+                "id": "PublicSubnet1",
+                "path": "DevStack/DefaultVpc/PublicSubnet1"
+              },
+              "PublicSubnet2": {
+                "id": "PublicSubnet2",
+                "path": "DevStack/DefaultVpc/PublicSubnet2"
+              },
+              "PrivateSubnet1": {
+                "id": "PrivateSubnet1",
+                "path": "DevStack/DefaultVpc/PrivateSubnet1"
+              },
+              "PrivateSubnet2": {
+                "id": "PrivateSubnet2",
+                "path": "DevStack/DefaultVpc/PrivateSubnet2"
+              }
+            }
+          },
+          "AppCluster": {
+            "id": "AppCluster",
+            "path": "DevStack/AppCluster",
+            "children": {
+              "Resource": {
+                "id": "Resource",
+                "path": "DevStack/AppCluster/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::Cluster",
+                  "aws:cdk:cloudformation:props": {}
+                }
+              }
+            }
+          },
+          "DevStackTaskDef": {
+            "id": "DevStackTaskDef",
+            "path": "DevStack/DevStackTaskDef",
+            "children": {
+              "TaskRole": {
+                "id": "TaskRole",
+                "path": "DevStack/DevStackTaskDef/TaskRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "DevStack/DevStackTaskDef/TaskRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ecs-tasks.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "DevStack/DevStackTaskDef/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::ECS::TaskDefinition",
+                  "aws:cdk:cloudformation:props": {
+                    "containerDefinitions": [
+                      {
+                        "essential": true,
+                        "image": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "DummyAccountId.dkr.ecr.us-east-1.",
+                              {
+                                "Ref": "AWS::URLSuffix"
+                              },
+                              "/",
+                              {
+                                "Fn::Select": [
+                                  0,
+                                  {
+                                    "Fn::Split": [
+                                      "@sha256:",
+                                      {
+                                        "Ref": "AssetParameters2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969ImageNameD8963A71"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "@sha256:",
+                              {
+                                "Fn::Select": [
+                                  1,
+                                  {
+                                    "Fn::Split": [
+                                      "@sha256:",
+                                      {
+                                        "Ref": "AssetParameters2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969ImageNameD8963A71"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          ]
+                        },
+                        "name": "mysql",
+                        "portMappings": [
+                          {
+                            "containerPort": 3306,
+                            "hostPort": 3306,
+                            "protocol": "tcp"
+                          }
+                        ]
+                      },
+                      {
+                        "essential": true,
+                        "image": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "DummyAccountId.dkr.ecr.us-east-1.",
+                              {
+                                "Ref": "AWS::URLSuffix"
+                              },
+                              "/",
+                              {
+                                "Fn::Select": [
+                                  0,
+                                  {
+                                    "Fn::Split": [
+                                      "@sha256:",
+                                      {
+                                        "Ref": "AssetParameterse28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71ImageName6A8EEC47"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "@sha256:",
+                              {
+                                "Fn::Select": [
+                                  1,
+                                  {
+                                    "Fn::Split": [
+                                      "@sha256:",
+                                      {
+                                        "Ref": "AssetParameterse28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71ImageName6A8EEC47"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          ]
+                        },
+                        "name": "mongodb",
+                        "portMappings": [
+                          {
+                            "containerPort": 27017,
+                            "hostPort": 27017,
+                            "protocol": "tcp"
+                          }
+                        ]
+                      },
+                      {
+                        "essential": true,
+                        "image": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "DummyAccountId.dkr.ecr.us-east-1.",
+                              {
+                                "Ref": "AWS::URLSuffix"
+                              },
+                              "/",
+                              {
+                                "Fn::Select": [
+                                  0,
+                                  {
+                                    "Fn::Split": [
+                                      "@sha256:",
+                                      {
+                                        "Ref": "AssetParameters15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820ImageNameDDEE43ED"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "@sha256:",
+                              {
+                                "Fn::Select": [
+                                  1,
+                                  {
+                                    "Fn::Split": [
+                                      "@sha256:",
+                                      {
+                                        "Ref": "AssetParameters15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820ImageNameDDEE43ED"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          ]
+                        },
+                        "name": "localstack",
+                        "portMappings": [
+                          {
+                            "containerPort": 4572,
+                            "hostPort": 4572,
+                            "protocol": "tcp"
+                          },
+                          {
+                            "containerPort": 4576,
+                            "hostPort": 4576,
+                            "protocol": "tcp"
+                          },
+                          {
+                            "containerPort": 4584,
+                            "hostPort": 4584,
+                            "protocol": "tcp"
+                          }
+                        ]
+                      },
+                      {
+                        "dependsOn": [
+                          {
+                            "containerName": "mysql",
+                            "condition": "START"
+                          },
+                          {
+                            "containerName": "mongodb",
+                            "condition": "START"
+                          },
+                          {
+                            "containerName": "localstack",
+                            "condition": "START"
+                          }
+                        ],
+                        "essential": true,
+                        "image": {
+                          "Fn::Join": [
+                            "",
+                            [
+                              "DummyAccountId.dkr.ecr.us-east-1.",
+                              {
+                                "Ref": "AWS::URLSuffix"
+                              },
+                              "/",
+                              {
+                                "Fn::Select": [
+                                  0,
+                                  {
+                                    "Fn::Split": [
+                                      "@sha256:",
+                                      {
+                                        "Ref": "AssetParametersc5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749ImageName406CFC29"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "@sha256:",
+                              {
+                                "Fn::Select": [
+                                  1,
+                                  {
+                                    "Fn::Split": [
+                                      "@sha256:",
+                                      {
+                                        "Ref": "AssetParametersc5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749ImageName406CFC29"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              }
+                            ]
+                          ]
+                        },
+                        "name": "schemaBuilder"
+                      }
+                    ],
+                    "cpu": "256",
+                    "executionRoleArn": {
+                      "Fn::GetAtt": [
+                        "DevStackTaskDefExecutionRole927ADE9D",
+                        "Arn"
+                      ]
+                    },
+                    "family": "DevStackDevStackTaskDefAEF55912",
+                    "memory": "512",
+                    "networkMode": "awsvpc",
+                    "requiresCompatibilities": [
+                      "FARGATE"
+                    ],
+                    "taskRoleArn": {
+                      "Fn::GetAtt": [
+                        "DevStackTaskDefTaskRoleD536D856",
+                        "Arn"
+                      ]
+                    }
+                  }
+                }
+              },
+              "mysql": {
+                "id": "mysql",
+                "path": "DevStack/DevStackTaskDef/mysql",
+                "children": {
+                  "AssetImage": {
+                    "id": "AssetImage",
+                    "path": "DevStack/DevStackTaskDef/mysql/AssetImage",
+                    "children": {
+                      "Staging": {
+                        "id": "Staging",
+                        "path": "DevStack/DevStackTaskDef/mysql/AssetImage/Staging"
+                      },
+                      "AdoptRepository": {
+                        "id": "AdoptRepository",
+                        "path": "DevStack/DevStackTaskDef/mysql/AssetImage/AdoptRepository",
+                        "children": {
+                          "Function": {
+                            "id": "Function",
+                            "path": "DevStack/DevStackTaskDef/mysql/AssetImage/AdoptRepository/Function"
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "DevStack/DevStackTaskDef/mysql/AssetImage/AdoptRepository/Resource",
+                            "children": {
+                              "Default": {
+                                "id": "Default",
+                                "path": "DevStack/DevStackTaskDef/mysql/AssetImage/AdoptRepository/Resource/Default"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "ExecutionRole": {
+                "id": "ExecutionRole",
+                "path": "DevStack/DevStackTaskDef/ExecutionRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "DevStack/DevStackTaskDef/ExecutionRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "ecs-tasks.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        }
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "DevStack/DevStackTaskDef/ExecutionRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "DevStack/DevStackTaskDef/ExecutionRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "ecr:BatchCheckLayerAvailability",
+                                    "ecr:GetDownloadUrlForLayer",
+                                    "ecr:BatchGetImage"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":ecr:us-east-1:DummyAccountId:repository/",
+                                        {
+                                          "Fn::GetAtt": [
+                                            "DevStackTaskDefmysqlAssetImageAdoptRepository178905EB",
+                                            "RepositoryName"
+                                          ]
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                },
+                                {
+                                  "Action": "ecr:GetAuthorizationToken",
+                                  "Effect": "Allow",
+                                  "Resource": "*"
+                                },
+                                {
+                                  "Action": [
+                                    "ecr:BatchCheckLayerAvailability",
+                                    "ecr:GetDownloadUrlForLayer",
+                                    "ecr:BatchGetImage"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":ecr:us-east-1:DummyAccountId:repository/",
+                                        {
+                                          "Fn::GetAtt": [
+                                            "DevStackTaskDefmongodbAssetImageAdoptRepositoryB7105682",
+                                            "RepositoryName"
+                                          ]
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                },
+                                {
+                                  "Action": [
+                                    "ecr:BatchCheckLayerAvailability",
+                                    "ecr:GetDownloadUrlForLayer",
+                                    "ecr:BatchGetImage"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":ecr:us-east-1:DummyAccountId:repository/",
+                                        {
+                                          "Fn::GetAtt": [
+                                            "DevStackTaskDeflocalstackAssetImageAdoptRepository5A4CA828",
+                                            "RepositoryName"
+                                          ]
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                },
+                                {
+                                  "Action": [
+                                    "ecr:BatchCheckLayerAvailability",
+                                    "ecr:GetDownloadUrlForLayer",
+                                    "ecr:BatchGetImage"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":ecr:us-east-1:DummyAccountId:repository/",
+                                        {
+                                          "Fn::GetAtt": [
+                                            "DevStackTaskDefschemaBuilderAssetImageAdoptRepository4F6FD247",
+                                            "RepositoryName"
+                                          ]
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "DevStackTaskDefExecutionRoleDefaultPolicy22F8C33B",
+                            "roles": [
+                              {
+                                "Ref": "DevStackTaskDefExecutionRole927ADE9D"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "mongodb": {
+                "id": "mongodb",
+                "path": "DevStack/DevStackTaskDef/mongodb",
+                "children": {
+                  "AssetImage": {
+                    "id": "AssetImage",
+                    "path": "DevStack/DevStackTaskDef/mongodb/AssetImage",
+                    "children": {
+                      "Staging": {
+                        "id": "Staging",
+                        "path": "DevStack/DevStackTaskDef/mongodb/AssetImage/Staging"
+                      },
+                      "AdoptRepository": {
+                        "id": "AdoptRepository",
+                        "path": "DevStack/DevStackTaskDef/mongodb/AssetImage/AdoptRepository",
+                        "children": {
+                          "Function": {
+                            "id": "Function",
+                            "path": "DevStack/DevStackTaskDef/mongodb/AssetImage/AdoptRepository/Function"
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "DevStack/DevStackTaskDef/mongodb/AssetImage/AdoptRepository/Resource",
+                            "children": {
+                              "Default": {
+                                "id": "Default",
+                                "path": "DevStack/DevStackTaskDef/mongodb/AssetImage/AdoptRepository/Resource/Default"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "localstack": {
+                "id": "localstack",
+                "path": "DevStack/DevStackTaskDef/localstack",
+                "children": {
+                  "AssetImage": {
+                    "id": "AssetImage",
+                    "path": "DevStack/DevStackTaskDef/localstack/AssetImage",
+                    "children": {
+                      "Staging": {
+                        "id": "Staging",
+                        "path": "DevStack/DevStackTaskDef/localstack/AssetImage/Staging"
+                      },
+                      "AdoptRepository": {
+                        "id": "AdoptRepository",
+                        "path": "DevStack/DevStackTaskDef/localstack/AssetImage/AdoptRepository",
+                        "children": {
+                          "Function": {
+                            "id": "Function",
+                            "path": "DevStack/DevStackTaskDef/localstack/AssetImage/AdoptRepository/Function"
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "DevStack/DevStackTaskDef/localstack/AssetImage/AdoptRepository/Resource",
+                            "children": {
+                              "Default": {
+                                "id": "Default",
+                                "path": "DevStack/DevStackTaskDef/localstack/AssetImage/AdoptRepository/Resource/Default"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "schemaBuilder": {
+                "id": "schemaBuilder",
+                "path": "DevStack/DevStackTaskDef/schemaBuilder",
+                "children": {
+                  "AssetImage": {
+                    "id": "AssetImage",
+                    "path": "DevStack/DevStackTaskDef/schemaBuilder/AssetImage",
+                    "children": {
+                      "Staging": {
+                        "id": "Staging",
+                        "path": "DevStack/DevStackTaskDef/schemaBuilder/AssetImage/Staging"
+                      },
+                      "AdoptRepository": {
+                        "id": "AdoptRepository",
+                        "path": "DevStack/DevStackTaskDef/schemaBuilder/AssetImage/AdoptRepository",
+                        "children": {
+                          "Function": {
+                            "id": "Function",
+                            "path": "DevStack/DevStackTaskDef/schemaBuilder/AssetImage/AdoptRepository/Function"
+                          },
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "DevStack/DevStackTaskDef/schemaBuilder/AssetImage/AdoptRepository/Resource",
+                            "children": {
+                              "Default": {
+                                "id": "Default",
+                                "path": "DevStack/DevStackTaskDef/schemaBuilder/AssetImage/AdoptRepository/Resource/Default"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "AssetParameters": {
+            "id": "AssetParameters",
+            "path": "DevStack/AssetParameters",
+            "children": {
+              "2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969": {
+                "id": "2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969",
+                "path": "DevStack/AssetParameters/2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969",
+                "children": {
+                  "ImageName": {
+                    "id": "ImageName",
+                    "path": "DevStack/AssetParameters/2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969/ImageName"
+                  }
+                }
+              },
+              "a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7": {
+                "id": "a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7",
+                "path": "DevStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7",
+                "children": {
+                  "S3Bucket": {
+                    "id": "S3Bucket",
+                    "path": "DevStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7/S3Bucket"
+                  },
+                  "S3VersionKey": {
+                    "id": "S3VersionKey",
+                    "path": "DevStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7/S3VersionKey"
+                  },
+                  "ArtifactHash": {
+                    "id": "ArtifactHash",
+                    "path": "DevStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7/ArtifactHash"
+                  }
+                }
+              },
+              "e28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71": {
+                "id": "e28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71",
+                "path": "DevStack/AssetParameters/e28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71",
+                "children": {
+                  "ImageName": {
+                    "id": "ImageName",
+                    "path": "DevStack/AssetParameters/e28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71/ImageName"
+                  }
+                }
+              },
+              "15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820": {
+                "id": "15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820",
+                "path": "DevStack/AssetParameters/15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820",
+                "children": {
+                  "ImageName": {
+                    "id": "ImageName",
+                    "path": "DevStack/AssetParameters/15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820/ImageName"
+                  }
+                }
+              },
+              "c5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749": {
+                "id": "c5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749",
+                "path": "DevStack/AssetParameters/c5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749",
+                "children": {
+                  "ImageName": {
+                    "id": "ImageName",
+                    "path": "DevStack/AssetParameters/c5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749/ImageName"
+                  }
+                }
+              }
+            }
+          },
+          "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c": {
+            "id": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c",
+            "path": "DevStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c",
+            "children": {
+              "ServiceRole": {
+                "id": "ServiceRole",
+                "path": "DevStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/ServiceRole",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "DevStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/ServiceRole/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::IAM::Role",
+                      "aws:cdk:cloudformation:props": {
+                        "assumeRolePolicyDocument": {
+                          "Statement": [
+                            {
+                              "Action": "sts:AssumeRole",
+                              "Effect": "Allow",
+                              "Principal": {
+                                "Service": "lambda.amazonaws.com"
+                              }
+                            }
+                          ],
+                          "Version": "2012-10-17"
+                        },
+                        "managedPolicyArns": [
+                          {
+                            "Fn::Join": [
+                              "",
+                              [
+                                "arn:",
+                                {
+                                  "Ref": "AWS::Partition"
+                                },
+                                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                              ]
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "DefaultPolicy": {
+                    "id": "DefaultPolicy",
+                    "path": "DevStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/ServiceRole/DefaultPolicy",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "DevStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/ServiceRole/DefaultPolicy/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::IAM::Policy",
+                          "aws:cdk:cloudformation:props": {
+                            "policyDocument": {
+                              "Statement": [
+                                {
+                                  "Action": [
+                                    "ecr:GetRepositoryPolicy",
+                                    "ecr:SetRepositoryPolicy",
+                                    "ecr:DeleteRepository",
+                                    "ecr:ListImages",
+                                    "ecr:BatchDeleteImage"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":ecr:us-east-1:DummyAccountId:repository/",
+                                        {
+                                          "Fn::Select": [
+                                            0,
+                                            {
+                                              "Fn::Split": [
+                                                "@sha256:",
+                                                {
+                                                  "Ref": "AssetParameters2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969ImageNameD8963A71"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                },
+                                {
+                                  "Action": [
+                                    "ecr:GetRepositoryPolicy",
+                                    "ecr:SetRepositoryPolicy",
+                                    "ecr:DeleteRepository",
+                                    "ecr:ListImages",
+                                    "ecr:BatchDeleteImage"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":ecr:us-east-1:DummyAccountId:repository/",
+                                        {
+                                          "Fn::Select": [
+                                            0,
+                                            {
+                                              "Fn::Split": [
+                                                "@sha256:",
+                                                {
+                                                  "Ref": "AssetParameterse28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71ImageName6A8EEC47"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                },
+                                {
+                                  "Action": [
+                                    "ecr:GetRepositoryPolicy",
+                                    "ecr:SetRepositoryPolicy",
+                                    "ecr:DeleteRepository",
+                                    "ecr:ListImages",
+                                    "ecr:BatchDeleteImage"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":ecr:us-east-1:DummyAccountId:repository/",
+                                        {
+                                          "Fn::Select": [
+                                            0,
+                                            {
+                                              "Fn::Split": [
+                                                "@sha256:",
+                                                {
+                                                  "Ref": "AssetParameters15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820ImageNameDDEE43ED"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                },
+                                {
+                                  "Action": [
+                                    "ecr:GetRepositoryPolicy",
+                                    "ecr:SetRepositoryPolicy",
+                                    "ecr:DeleteRepository",
+                                    "ecr:ListImages",
+                                    "ecr:BatchDeleteImage"
+                                  ],
+                                  "Effect": "Allow",
+                                  "Resource": {
+                                    "Fn::Join": [
+                                      "",
+                                      [
+                                        "arn:",
+                                        {
+                                          "Ref": "AWS::Partition"
+                                        },
+                                        ":ecr:us-east-1:DummyAccountId:repository/",
+                                        {
+                                          "Fn::Select": [
+                                            0,
+                                            {
+                                              "Fn::Split": [
+                                                "@sha256:",
+                                                {
+                                                  "Ref": "AssetParametersc5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749ImageName406CFC29"
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    ]
+                                  }
+                                }
+                              ],
+                              "Version": "2012-10-17"
+                            },
+                            "policyName": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleDefaultPolicy6BC8737C",
+                            "roles": [
+                              {
+                                "Ref": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "Code": {
+                "id": "Code",
+                "path": "DevStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/Code",
+                "children": {
+                  "Stage": {
+                    "id": "Stage",
+                    "path": "DevStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/Code/Stage"
+                  },
+                  "AssetBucket": {
+                    "id": "AssetBucket",
+                    "path": "DevStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/Code/AssetBucket"
+                  }
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "DevStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::Lambda::Function",
+                  "aws:cdk:cloudformation:props": {
+                    "code": {
+                      "s3Bucket": {
+                        "Ref": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3Bucket7CBBD48C"
+                      },
+                      "s3Key": {
+                        "Fn::Join": [
+                          "",
+                          [
+                            {
+                              "Fn::Select": [
+                                0,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3VersionKey87E3D057"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "Fn::Select": [
+                                1,
+                                {
+                                  "Fn::Split": [
+                                    "||",
+                                    {
+                                      "Ref": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3VersionKey87E3D057"
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        ]
+                      }
+                    },
+                    "handler": "handler.handler",
+                    "role": {
+                      "Fn::GetAtt": [
+                        "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17",
+                        "Arn"
+                      ]
+                    },
+                    "runtime": "nodejs10.x",
+                    "timeout": 300
+                  }
+                }
+              }
+            }
+          },
+          "DevStackService": {
+            "id": "DevStackService",
+            "path": "DevStack/DevStackService",
+            "children": {
+              "LB": {
+                "id": "LB",
+                "path": "DevStack/DevStackService/LB",
+                "children": {
+                  "Resource": {
+                    "id": "Resource",
+                    "path": "DevStack/DevStackService/LB/Resource",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::LoadBalancer",
+                      "aws:cdk:cloudformation:props": {
+                        "scheme": "internet-facing",
+                        "securityGroups": [
+                          {
+                            "Fn::GetAtt": [
+                              "DevStackServiceLBSecurityGroup8C3A7A61",
+                              "GroupId"
+                            ]
+                          }
+                        ],
+                        "subnets": [
+                          "s-12345",
+                          "s-67890"
+                        ],
+                        "type": "application"
+                      }
+                    }
+                  },
+                  "SecurityGroup": {
+                    "id": "SecurityGroup",
+                    "path": "DevStack/DevStackService/LB/SecurityGroup",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "DevStack/DevStackService/LB/SecurityGroup/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "groupDescription": "Automatically created Security Group for ELB DevStackDevStackServiceLB0D201EAF",
+                            "securityGroupIngress": [
+                              {
+                                "cidrIp": "0.0.0.0/0",
+                                "ipProtocol": "tcp",
+                                "fromPort": 80,
+                                "toPort": 80,
+                                "description": "Allow from anyone on port 80"
+                              }
+                            ],
+                            "vpcId": "vpc-12345"
+                          }
+                        }
+                      },
+                      "to DevStackDevStackServiceSecurityGroupE13EF5D2:3306": {
+                        "id": "to DevStackDevStackServiceSecurityGroupE13EF5D2:3306",
+                        "path": "DevStack/DevStackService/LB/SecurityGroup/to DevStackDevStackServiceSecurityGroupE13EF5D2:3306",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupEgress",
+                          "aws:cdk:cloudformation:props": {
+                            "groupId": {
+                              "Fn::GetAtt": [
+                                "DevStackServiceLBSecurityGroup8C3A7A61",
+                                "GroupId"
+                              ]
+                            },
+                            "ipProtocol": "tcp",
+                            "description": "Load balancer to target",
+                            "destinationSecurityGroupId": {
+                              "Fn::GetAtt": [
+                                "DevStackServiceSecurityGroup1A43CA9B",
+                                "GroupId"
+                              ]
+                            },
+                            "fromPort": 3306,
+                            "toPort": 3306
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "PublicListener": {
+                    "id": "PublicListener",
+                    "path": "DevStack/DevStackService/LB/PublicListener",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "DevStack/DevStackService/LB/PublicListener/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::Listener",
+                          "aws:cdk:cloudformation:props": {
+                            "defaultActions": [
+                              {
+                                "targetGroupArn": {
+                                  "Ref": "DevStackServiceLBPublicListenerECSGroup11507B86"
+                                },
+                                "type": "forward"
+                              }
+                            ],
+                            "loadBalancerArn": {
+                              "Ref": "DevStackServiceLB4C194C2B"
+                            },
+                            "port": 80,
+                            "protocol": "HTTP"
+                          }
+                        }
+                      },
+                      "ECSGroup": {
+                        "id": "ECSGroup",
+                        "path": "DevStack/DevStackService/LB/PublicListener/ECSGroup",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "DevStack/DevStackService/LB/PublicListener/ECSGroup/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::ElasticLoadBalancingV2::TargetGroup",
+                              "aws:cdk:cloudformation:props": {
+                                "port": 80,
+                                "protocol": "HTTP",
+                                "targetType": "ip",
+                                "vpcId": "vpc-12345"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "LoadBalancerDNS": {
+                "id": "LoadBalancerDNS",
+                "path": "DevStack/DevStackService/LoadBalancerDNS"
+              },
+              "ServiceURL": {
+                "id": "ServiceURL",
+                "path": "DevStack/DevStackService/ServiceURL"
+              },
+              "Service": {
+                "id": "Service",
+                "path": "DevStack/DevStackService/Service",
+                "children": {
+                  "Service": {
+                    "id": "Service",
+                    "path": "DevStack/DevStackService/Service/Service",
+                    "attributes": {
+                      "aws:cdk:cloudformation:type": "AWS::ECS::Service",
+                      "aws:cdk:cloudformation:props": {
+                        "cluster": {
+                          "Ref": "AppCluster99B78AC1"
+                        },
+                        "deploymentConfiguration": {
+                          "maximumPercent": 200,
+                          "minimumHealthyPercent": 50
+                        },
+                        "desiredCount": 1,
+                        "enableEcsManagedTags": false,
+                        "healthCheckGracePeriodSeconds": 60,
+                        "launchType": "FARGATE",
+                        "loadBalancers": [
+                          {
+                            "targetGroupArn": {
+                              "Ref": "DevStackServiceLBPublicListenerECSGroup11507B86"
+                            },
+                            "containerName": "mysql",
+                            "containerPort": 3306
+                          }
+                        ],
+                        "networkConfiguration": {
+                          "awsvpcConfiguration": {
+                            "assignPublicIp": "ENABLED",
+                            "subnets": [
+                              "s-12345",
+                              "s-67890"
+                            ],
+                            "securityGroups": [
+                              {
+                                "Fn::GetAtt": [
+                                  "DevStackServiceSecurityGroup1A43CA9B",
+                                  "GroupId"
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        "taskDefinition": {
+                          "Ref": "DevStackTaskDef2D4B928F"
+                        }
+                      }
+                    }
+                  },
+                  "SecurityGroup": {
+                    "id": "SecurityGroup",
+                    "path": "DevStack/DevStackService/Service/SecurityGroup",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "DevStack/DevStackService/Service/SecurityGroup/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroup",
+                          "aws:cdk:cloudformation:props": {
+                            "groupDescription": "DevStack/DevStackService/Service/SecurityGroup",
+                            "securityGroupEgress": [
+                              {
+                                "cidrIp": "0.0.0.0/0",
+                                "description": "Allow all outbound traffic by default",
+                                "ipProtocol": "-1"
+                              }
+                            ],
+                            "vpcId": "vpc-12345"
+                          }
+                        }
+                      },
+                      "from DevStackDevStackServiceLBSecurityGroup6E090AA5:3306": {
+                        "id": "from DevStackDevStackServiceLBSecurityGroup6E090AA5:3306",
+                        "path": "DevStack/DevStackService/Service/SecurityGroup/from DevStackDevStackServiceLBSecurityGroup6E090AA5:3306",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::EC2::SecurityGroupIngress",
+                          "aws:cdk:cloudformation:props": {
+                            "ipProtocol": "tcp",
+                            "description": "Load balancer to target",
+                            "fromPort": 3306,
+                            "groupId": {
+                              "Fn::GetAtt": [
+                                "DevStackServiceSecurityGroup1A43CA9B",
+                                "GroupId"
+                              ]
+                            },
+                            "sourceSecurityGroupId": {
+                              "Fn::GetAtt": [
+                                "DevStackServiceLBSecurityGroup8C3A7A61",
+                                "GroupId"
+                              ]
+                            },
+                            "toPort": 3306
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

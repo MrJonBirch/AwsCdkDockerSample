@@ -1,0 +1,1821 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Amazon.CDK/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK.CXAPI": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.dll": {}
+        }
+      },
+      "Amazon.CDK.Assets/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.CXAPI": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.Assets.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.Assets.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.APIGateway/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.CertificateManager": "1.21.1",
+          "Amazon.CDK.AWS.ElasticLoadBalancingV2": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.Lambda": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.APIGateway.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.APIGateway.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.ApplicationAutoScaling/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.AutoScaling.Common": "1.21.1",
+          "Amazon.CDK.AWS.CloudWatch": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ApplicationAutoScaling.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ApplicationAutoScaling.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.AutoScaling/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.AutoScaling.Common": "1.21.1",
+          "Amazon.CDK.AWS.CloudWatch": "1.21.1",
+          "Amazon.CDK.AWS.EC2": "1.21.1",
+          "Amazon.CDK.AWS.ElasticLoadBalancing": "1.21.1",
+          "Amazon.CDK.AWS.ElasticLoadBalancingV2": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.SNS": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.AutoScaling.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.AutoScaling.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.AutoScaling.Common/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.AutoScaling.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.AutoScaling.Common.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.AutoScaling.HookTargets/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.AutoScaling": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.Lambda": "1.21.1",
+          "Amazon.CDK.AWS.SNS": "1.21.1",
+          "Amazon.CDK.AWS.SNS.Subscriptions": "1.21.1",
+          "Amazon.CDK.AWS.SQS": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.AutoScaling.HookTargets.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.AutoScaling.HookTargets.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.CertificateManager/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.CloudFormation": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.Lambda": "1.21.1",
+          "Amazon.CDK.AWS.Route53": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CertificateManager.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CertificateManager.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.CloudFormation/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.Lambda": "1.21.1",
+          "Amazon.CDK.AWS.S3": "1.21.1",
+          "Amazon.CDK.AWS.SNS": "1.21.1",
+          "Amazon.CDK.CXAPI": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CloudFormation.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CloudFormation.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.CloudFront/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.CertificateManager": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.KMS": "1.21.1",
+          "Amazon.CDK.AWS.Lambda": "1.21.1",
+          "Amazon.CDK.AWS.S3": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CloudFront.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CloudFront.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.CloudWatch/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CloudWatch.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CloudWatch.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.CodeBuild/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.CloudWatch": "1.21.1",
+          "Amazon.CDK.AWS.CodeCommit": "1.21.1",
+          "Amazon.CDK.AWS.EC2": "1.21.1",
+          "Amazon.CDK.AWS.ECR": "1.21.1",
+          "Amazon.CDK.AWS.Events": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.KMS": "1.21.1",
+          "Amazon.CDK.AWS.S3": "1.21.1",
+          "Amazon.CDK.AWS.S3.Assets": "1.21.1",
+          "Amazon.CDK.AWS.SecretsManager": "1.21.1",
+          "Amazon.CDK.Assets": "1.21.1",
+          "Amazon.CDK.ECR.Assets": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CodeBuild.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CodeBuild.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.CodeCommit/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.Events": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CodeCommit.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CodeCommit.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.CodePipeline/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.Events": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.KMS": "1.21.1",
+          "Amazon.CDK.AWS.S3": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CodePipeline.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.CodePipeline.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.EC2/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.CloudWatch": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.SSM": "1.21.1",
+          "Amazon.CDK.CXAPI": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.EC2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.EC2.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.ECR/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.Events": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ECR.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ECR.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.ECS/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.ApplicationAutoScaling": "1.21.1",
+          "Amazon.CDK.AWS.AutoScaling": "1.21.1",
+          "Amazon.CDK.AWS.AutoScaling.HookTargets": "1.21.1",
+          "Amazon.CDK.AWS.CertificateManager": "1.21.1",
+          "Amazon.CDK.AWS.CloudFormation": "1.21.1",
+          "Amazon.CDK.AWS.CloudWatch": "1.21.1",
+          "Amazon.CDK.AWS.EC2": "1.21.1",
+          "Amazon.CDK.AWS.ECR": "1.21.1",
+          "Amazon.CDK.AWS.ElasticLoadBalancing": "1.21.1",
+          "Amazon.CDK.AWS.ElasticLoadBalancingV2": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.Lambda": "1.21.1",
+          "Amazon.CDK.AWS.Logs": "1.21.1",
+          "Amazon.CDK.AWS.Route53": "1.21.1",
+          "Amazon.CDK.AWS.Route53.Targets": "1.21.1",
+          "Amazon.CDK.AWS.SNS": "1.21.1",
+          "Amazon.CDK.AWS.SQS": "1.21.1",
+          "Amazon.CDK.AWS.SSM": "1.21.1",
+          "Amazon.CDK.AWS.SecretsManager": "1.21.1",
+          "Amazon.CDK.AWS.ServiceDiscovery": "1.21.1",
+          "Amazon.CDK.CXAPI": "1.21.1",
+          "Amazon.CDK.ECR.Assets": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ECS.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ECS.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.ECS.Patterns/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.ApplicationAutoScaling": "1.21.1",
+          "Amazon.CDK.AWS.CertificateManager": "1.21.1",
+          "Amazon.CDK.AWS.EC2": "1.21.1",
+          "Amazon.CDK.AWS.ECS": "1.21.1",
+          "Amazon.CDK.AWS.ElasticLoadBalancingV2": "1.21.1",
+          "Amazon.CDK.AWS.Events": "1.21.1",
+          "Amazon.CDK.AWS.Events.Targets": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.Route53": "1.21.1",
+          "Amazon.CDK.AWS.Route53.Targets": "1.21.1",
+          "Amazon.CDK.AWS.SQS": "1.21.1",
+          "Amazon.CDK.AWS.ServiceDiscovery": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ECS.Patterns.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ECS.Patterns.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.ElasticLoadBalancing/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.EC2": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ElasticLoadBalancing.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ElasticLoadBalancing.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.ElasticLoadBalancingV2/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.CertificateManager": "1.21.1",
+          "Amazon.CDK.AWS.CloudWatch": "1.21.1",
+          "Amazon.CDK.AWS.EC2": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.Lambda": "1.21.1",
+          "Amazon.CDK.AWS.S3": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ElasticLoadBalancingV2.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ElasticLoadBalancingV2.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.Events/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.Events.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.Events.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.Events.Targets/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.CloudFormation": "1.21.1",
+          "Amazon.CDK.AWS.CodeBuild": "1.21.1",
+          "Amazon.CDK.AWS.CodePipeline": "1.21.1",
+          "Amazon.CDK.AWS.EC2": "1.21.1",
+          "Amazon.CDK.AWS.ECS": "1.21.1",
+          "Amazon.CDK.AWS.Events": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.Lambda": "1.21.1",
+          "Amazon.CDK.AWS.SNS": "1.21.1",
+          "Amazon.CDK.AWS.SNS.Subscriptions": "1.21.1",
+          "Amazon.CDK.AWS.SQS": "1.21.1",
+          "Amazon.CDK.AWS.StepFunctions": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.Events.Targets.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.Events.Targets.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.IAM/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.RegionInfo": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.IAM.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.IAM.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.KMS/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.KMS.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.KMS.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.Lambda/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.CloudWatch": "1.21.1",
+          "Amazon.CDK.AWS.EC2": "1.21.1",
+          "Amazon.CDK.AWS.Events": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.Logs": "1.21.1",
+          "Amazon.CDK.AWS.S3": "1.21.1",
+          "Amazon.CDK.AWS.S3.Assets": "1.21.1",
+          "Amazon.CDK.AWS.SQS": "1.21.1",
+          "Amazon.CDK.CXAPI": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.Lambda.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.Lambda.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.Logs/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.CloudWatch": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.Logs.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.Logs.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.Route53/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.EC2": "1.21.1",
+          "Amazon.CDK.AWS.Logs": "1.21.1",
+          "Amazon.CDK.CXAPI": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.Route53.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.Route53.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.Route53.Targets/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.APIGateway": "1.21.1",
+          "Amazon.CDK.AWS.CloudFront": "1.21.1",
+          "Amazon.CDK.AWS.ElasticLoadBalancing": "1.21.1",
+          "Amazon.CDK.AWS.ElasticLoadBalancingV2": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.Route53": "1.21.1",
+          "Amazon.CDK.AWS.S3": "1.21.1",
+          "Amazon.CDK.RegionInfo": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.Route53.Targets.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.Route53.Targets.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.S3/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.Events": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.KMS": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.S3.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.S3.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.S3.Assets/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.S3": "1.21.1",
+          "Amazon.CDK.Assets": "1.21.1",
+          "Amazon.CDK.CXAPI": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.S3.Assets.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.S3.Assets.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.SAM/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.SAM.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.SAM.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.SecretsManager/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.EC2": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.KMS": "1.21.1",
+          "Amazon.CDK.AWS.Lambda": "1.21.1",
+          "Amazon.CDK.AWS.SAM": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.SecretsManager.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.SecretsManager.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.ServiceDiscovery/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.EC2": "1.21.1",
+          "Amazon.CDK.AWS.ElasticLoadBalancingV2": "1.21.1",
+          "Amazon.CDK.AWS.Route53": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ServiceDiscovery.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.ServiceDiscovery.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.SNS/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.CloudWatch": "1.21.1",
+          "Amazon.CDK.AWS.Events": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.KMS": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.SNS.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.SNS.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.SNS.Subscriptions/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.Lambda": "1.21.1",
+          "Amazon.CDK.AWS.SNS": "1.21.1",
+          "Amazon.CDK.AWS.SQS": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.SNS.Subscriptions.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.SNS.Subscriptions.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.SQS/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.CloudWatch": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.KMS": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.SQS.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.SQS.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.SSM/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.KMS": "1.21.1",
+          "Amazon.CDK.CXAPI": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.SSM.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.SSM.dll": {}
+        }
+      },
+      "Amazon.CDK.AWS.StepFunctions/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.CloudWatch": "1.21.1",
+          "Amazon.CDK.AWS.Events": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.StepFunctions.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.AWS.StepFunctions.dll": {}
+        }
+      },
+      "Amazon.CDK.CXAPI/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.CXAPI.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.CXAPI.dll": {}
+        }
+      },
+      "Amazon.CDK.ECR.Assets/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.CDK": "1.21.1",
+          "Amazon.CDK.AWS.CloudFormation": "1.21.1",
+          "Amazon.CDK.AWS.ECR": "1.21.1",
+          "Amazon.CDK.AWS.IAM": "1.21.1",
+          "Amazon.CDK.AWS.Lambda": "1.21.1",
+          "Amazon.CDK.AWS.S3": "1.21.1",
+          "Amazon.CDK.Assets": "1.21.1",
+          "Amazon.CDK.CXAPI": "1.21.1",
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.ECR.Assets.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.ECR.Assets.dll": {}
+        }
+      },
+      "Amazon.CDK.RegionInfo/1.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.JSII.Runtime": "[0.21.1, 0.22.0)"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.CDK.RegionInfo.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.CDK.RegionInfo.dll": {}
+        }
+      },
+      "Amazon.JSII.JsonModel/0.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.JSII.JsonModel.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.JSII.JsonModel.dll": {}
+        }
+      },
+      "Amazon.JSII.Runtime/0.21.1": {
+        "type": "package",
+        "dependencies": {
+          "Amazon.JSII.JsonModel": "[0.21.1, 1.0.0)",
+          "Microsoft.Extensions.DependencyInjection": "3.1.0",
+          "Microsoft.Extensions.Logging": "3.1.0",
+          "Microsoft.Extensions.Logging.Console": "3.1.0",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Amazon.JSII.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Amazon.JSII.Runtime.dll": {}
+        }
+      },
+      "AWSSDK.Core/3.3.104.18": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/AWSSDK.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AWSSDK.Core.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "3.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "3.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Configuration.Binder/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "3.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll": {}
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Binder": "3.1.0",
+          "Microsoft.Extensions.DependencyInjection": "3.1.0",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.0",
+          "Microsoft.Extensions.Options": "3.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Logging.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Logging.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Configuration/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "3.1.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "3.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Logging.Configuration.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Logging.Configuration.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Console/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "3.1.0",
+          "Microsoft.Extensions.Logging": "3.1.0",
+          "Microsoft.Extensions.Logging.Configuration": "3.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Logging.Console.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Logging.Console.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Options/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.0",
+          "Microsoft.Extensions.Primitives": "3.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Options.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Options.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Options.ConfigurationExtensions/3.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Configuration.Abstractions": "3.1.0",
+          "Microsoft.Extensions.Configuration.Binder": "3.1.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.0",
+          "Microsoft.Extensions.Options": "3.1.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Options.ConfigurationExtensions.dll": {}
+        }
+      },
+      "Microsoft.Extensions.Primitives/3.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {}
+        }
+      },
+      "Newtonsoft.Json/12.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Amazon.CDK/1.21.1": {
+      "sha512": "nJuva+WqY+wAy9eFDsEJr9i+9cnxJlUYJBzltHOEJkt/nnnAyNSHzspuBQqHYsfHJRtk3ykqZ9a1EfG7GNAInw==",
+      "type": "package",
+      "path": "amazon.cdk/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.1.21.1.nupkg.sha512",
+        "amazon.cdk.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.xml"
+      ]
+    },
+    "Amazon.CDK.Assets/1.21.1": {
+      "sha512": "89n8iNaua4/QMGt6Q5uWuvioKKPELqztl9xKpDnEnytOQ0VN6hBxTYLs1gHG7gLLqCA/duJmr4kfMVc/+FL/zg==",
+      "type": "package",
+      "path": "amazon.cdk.assets/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.assets.1.21.1.nupkg.sha512",
+        "amazon.cdk.assets.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.Assets.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.Assets.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.APIGateway/1.21.1": {
+      "sha512": "BqKr9NWp/2a1zYBlfizfxjJonW6fSGA1q7AXy73XtU0kkIq0t7n0c7+BLOA46sAWil33HHgQwNMV8MUYVubeUw==",
+      "type": "package",
+      "path": "amazon.cdk.aws.apigateway/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.apigateway.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.apigateway.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.APIGateway.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.APIGateway.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.ApplicationAutoScaling/1.21.1": {
+      "sha512": "sSjU4z2CH3MY9cySs5LAWAe93Ego0y0TaUN/gTau8pf8S6ZfdiTz4WWUp1BKBniuUlA5nMAzyZyLGj338SR8Hg==",
+      "type": "package",
+      "path": "amazon.cdk.aws.applicationautoscaling/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.applicationautoscaling.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.applicationautoscaling.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ApplicationAutoScaling.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ApplicationAutoScaling.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.AutoScaling/1.21.1": {
+      "sha512": "yjfWkArxKR4wdd5Zk4yMwxF1QdSCVTKhDRy39OTkqLMNYl52f/HOZSW3Go83fVjCJU/p8lnOnMu5yoiXG+2Cpw==",
+      "type": "package",
+      "path": "amazon.cdk.aws.autoscaling/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.autoscaling.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.autoscaling.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.AutoScaling.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.AutoScaling.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.AutoScaling.Common/1.21.1": {
+      "sha512": "1N7Amza9XLxy4r8gt0SLHwOqDHh5kifztHCoeQwlRBSIKoWze+dM/dxTFaWaNR2GEkvNYBCxmCIU2zCsjGnpCA==",
+      "type": "package",
+      "path": "amazon.cdk.aws.autoscaling.common/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.autoscaling.common.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.autoscaling.common.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.AutoScaling.Common.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.AutoScaling.Common.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.AutoScaling.HookTargets/1.21.1": {
+      "sha512": "rySV9WtrZsgg/PYGHA2PTzkbY1GKHFgOfHXHAcPV2A3PRgUr2I6yR/515TOid/AFiXDJTWbgH1eEDPUcgIu09g==",
+      "type": "package",
+      "path": "amazon.cdk.aws.autoscaling.hooktargets/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.autoscaling.hooktargets.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.autoscaling.hooktargets.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.AutoScaling.HookTargets.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.AutoScaling.HookTargets.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.CertificateManager/1.21.1": {
+      "sha512": "uWB2ImgYIFrtXJMWsFIkfhkAo4Ri7B9NOVIfkQPs2TOEoDcA2dW/wMuBoF/8HdM6SxsW68dzeHrG8XCFulMq/A==",
+      "type": "package",
+      "path": "amazon.cdk.aws.certificatemanager/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.certificatemanager.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.certificatemanager.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CertificateManager.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CertificateManager.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.CloudFormation/1.21.1": {
+      "sha512": "wlvoPJ5Zgo/WF05giQcuLmd+Uqbx4QrBYnhKP5nKCGB2JNF2wnqHUq2Z6L5yYR8xhJure834lG06gS1neh41Fg==",
+      "type": "package",
+      "path": "amazon.cdk.aws.cloudformation/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.cloudformation.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.cloudformation.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CloudFormation.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CloudFormation.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.CloudFront/1.21.1": {
+      "sha512": "uIKwfLK+TvVZI75N0Zlm2PRlTfZpjlgi6RROINaTVHeUYYmALp8N6p5hOKdbSYxSYN5zTCX73zC770DQxGkVqw==",
+      "type": "package",
+      "path": "amazon.cdk.aws.cloudfront/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.cloudfront.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.cloudfront.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CloudFront.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CloudFront.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.CloudWatch/1.21.1": {
+      "sha512": "jhg4tvegc3OybzI3Vo062neIaR8kCkpvLU1a/K1yLtewFR66j1O2TBTil5MwPAA01K8emKDhGgxjvu2rUYyDeQ==",
+      "type": "package",
+      "path": "amazon.cdk.aws.cloudwatch/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.cloudwatch.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.cloudwatch.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CloudWatch.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CloudWatch.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.CodeBuild/1.21.1": {
+      "sha512": "4TrAzekPp5MWNih1jIPKykuTJ9QQOqP36GTklDsaZSAXEuNOxTJbFY3bAG/fyg+TKlsiDqiOB+62bA5RTT0c5w==",
+      "type": "package",
+      "path": "amazon.cdk.aws.codebuild/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.codebuild.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.codebuild.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CodeBuild.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CodeBuild.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.CodeCommit/1.21.1": {
+      "sha512": "gM0spoVWyDevw6XmXin4Sqs6+VF5OuxnUSYzYOwrzbDftvMFoVew8sOhEs5+0Omk6I9nRkJX+YmAe0jOJjyGTQ==",
+      "type": "package",
+      "path": "amazon.cdk.aws.codecommit/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.codecommit.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.codecommit.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CodeCommit.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CodeCommit.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.CodePipeline/1.21.1": {
+      "sha512": "MubfFJqRUw4vRY29kGS0YKDi52sjx7OEjNuIpsz7nrsCmR3izeT+q7K8ztYSeY9nhToPWCIeZFXoUN7SBxLyPg==",
+      "type": "package",
+      "path": "amazon.cdk.aws.codepipeline/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.codepipeline.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.codepipeline.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CodePipeline.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.CodePipeline.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.EC2/1.21.1": {
+      "sha512": "BEF0hzFGA80gGAwBn5XNzQ/LBlEoiUvFJzgcXS89Uc+u9bJC4oyfeLkpsCWdrM7ksZ5C3u5ewOoHxwMjFihutQ==",
+      "type": "package",
+      "path": "amazon.cdk.aws.ec2/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.ec2.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.ec2.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.EC2.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.EC2.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.ECR/1.21.1": {
+      "sha512": "L86yYOYYjP8Q2jeDdo3lGiXEF2DcdeqHIKVFaiyvzYUgtkb+MjXD2rUKt3c21zjG+3Cibi2eJvfXyB9DV8sCFA==",
+      "type": "package",
+      "path": "amazon.cdk.aws.ecr/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.ecr.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.ecr.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ECR.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ECR.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.ECS/1.21.1": {
+      "sha512": "7sowxs2KOP96OHKIuxee4ytFS0/NM4L3rAnikZI5bBruaNopQOV6NtExjdEsUTjDeNSSPiXfpjfrf0KnIoq1hQ==",
+      "type": "package",
+      "path": "amazon.cdk.aws.ecs/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.ecs.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.ecs.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ECS.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ECS.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.ECS.Patterns/1.21.1": {
+      "sha512": "f9R6jo3cpDT81m5xSOInTu+rWluXs+tylXfzUJ9ZnSeW628SLTEhddREppvHYJTq3mZw1DCvg1M/iJR3BihMGg==",
+      "type": "package",
+      "path": "amazon.cdk.aws.ecs.patterns/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.ecs.patterns.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.ecs.patterns.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ECS.Patterns.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ECS.Patterns.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.ElasticLoadBalancing/1.21.1": {
+      "sha512": "aHu1z2XsUxXKyuF/44jAaXwPDDQ0HSv2QQl9aRum9ZaQJ51ZJZqgBDb1V+PS4IgV8Vv9slcxqG4H5Tdjunyw7w==",
+      "type": "package",
+      "path": "amazon.cdk.aws.elasticloadbalancing/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.elasticloadbalancing.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.elasticloadbalancing.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ElasticLoadBalancing.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ElasticLoadBalancing.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.ElasticLoadBalancingV2/1.21.1": {
+      "sha512": "mDJ5oUdC7SbOVa7GbCW+D6/0sM7D8hC7PGTfmlcovUZVeZhXHWL9aEYLxzf0YrR4LLxV3ryBaQte43/8+ILiaA==",
+      "type": "package",
+      "path": "amazon.cdk.aws.elasticloadbalancingv2/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.elasticloadbalancingv2.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.elasticloadbalancingv2.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ElasticLoadBalancingV2.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ElasticLoadBalancingV2.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.Events/1.21.1": {
+      "sha512": "Wl9/jbEy52Wbjdh6NKOWdSyl8kbHQUp22Jy//ygwNEAXSOuaMIG2WmmKgBABCOklEd8Bfi9qNUBRC21/PmFkwg==",
+      "type": "package",
+      "path": "amazon.cdk.aws.events/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.events.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.events.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.Events.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.Events.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.Events.Targets/1.21.1": {
+      "sha512": "3u0jTUrh1SCVri5XEEXvaMjotwNfDGwhN2dV6330wzHeR242WW9SgrQ7Rbj0S7tLk3HWTQQyD5iTAZW8vz2iQg==",
+      "type": "package",
+      "path": "amazon.cdk.aws.events.targets/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.events.targets.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.events.targets.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.Events.Targets.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.Events.Targets.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.IAM/1.21.1": {
+      "sha512": "fG6rEtVQUpn0Xzhx173BRhv3O2xAFWYnMC41osKLc+RJkLZkkldRuis45JycG1kk6Xkh9B21gRJrj1lqNv13TA==",
+      "type": "package",
+      "path": "amazon.cdk.aws.iam/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.iam.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.iam.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.IAM.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.IAM.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.KMS/1.21.1": {
+      "sha512": "CAkucCkZN++/C8kkR2aONOxoN6nashDj0ufVPS58lK/2+K+o3dBMYwZAmQiE1fADvggNLnJaNxQR/5Kc06SeCw==",
+      "type": "package",
+      "path": "amazon.cdk.aws.kms/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.kms.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.kms.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.KMS.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.KMS.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.Lambda/1.21.1": {
+      "sha512": "d/wLiWUfdNbISDEQpWCRH3rHqTfCuVEn78kOTfuazznWackBauj6U9vmu14uoWRLJ0XgYc81MmWBv5Pe8piZfQ==",
+      "type": "package",
+      "path": "amazon.cdk.aws.lambda/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.lambda.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.lambda.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.Lambda.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.Lambda.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.Logs/1.21.1": {
+      "sha512": "pQCBEdkGh3Q42HZO1fnAIVOCquGQQTri4V/eZYuHocpoLRxzXWvXeOVoifKJOKoBQOr5NW8pzZzjaN6alo0yDw==",
+      "type": "package",
+      "path": "amazon.cdk.aws.logs/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.logs.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.logs.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.Logs.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.Logs.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.Route53/1.21.1": {
+      "sha512": "0rZeMmgWiDAQX9EdXu7T6Ld+lBRXwMRi22yvQMqqJKxaC1cqFo2cyWDyEdR7BT8nWOvatqXH6C+eVh1QHrt0yw==",
+      "type": "package",
+      "path": "amazon.cdk.aws.route53/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.route53.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.route53.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.Route53.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.Route53.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.Route53.Targets/1.21.1": {
+      "sha512": "nhu2QWJ7UDU8vw2P30755rY/iYqDTHYjEMKQEW5vrLJe4IQruGXDmgJVWh62Y57c2VAsIP25GxOtdZwzh1NAog==",
+      "type": "package",
+      "path": "amazon.cdk.aws.route53.targets/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.route53.targets.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.route53.targets.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.Route53.Targets.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.Route53.Targets.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.S3/1.21.1": {
+      "sha512": "5UIpCS0fc8bnvgoEF8YBBTC2KBbu3Iiu7iriV7yDdpv0KxDt7fy+U2hzDuUK8vkkq7N8kDfYXcFpEgwgt7kh4w==",
+      "type": "package",
+      "path": "amazon.cdk.aws.s3/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.s3.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.s3.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.S3.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.S3.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.S3.Assets/1.21.1": {
+      "sha512": "GZvjXfVSmuOE3WvTUT9VupmKlOFYUF/Rc8M3RAbl3YqbMM+DWR3ErESfAAf/K9kXm5i5k83+cbqxwGBCF1FU+w==",
+      "type": "package",
+      "path": "amazon.cdk.aws.s3.assets/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.s3.assets.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.s3.assets.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.S3.Assets.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.S3.Assets.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.SAM/1.21.1": {
+      "sha512": "hISytKGGto+jGCtZ0fIwYrIK+ANHnRaPP/+uF99PrevbavXH5rSbP6SsSvUPOvqmZXv7zfuyFRXfVfXEh+JD2w==",
+      "type": "package",
+      "path": "amazon.cdk.aws.sam/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.sam.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.sam.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.SAM.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.SAM.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.SecretsManager/1.21.1": {
+      "sha512": "h8RLKCe9Kg7ztI36I7jRxwxXcmdkoo0TQvgmt2w3/265UYVcN4rMM/LTAcj+t0FpibSCl1x8CheYCCA/uYaD7w==",
+      "type": "package",
+      "path": "amazon.cdk.aws.secretsmanager/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.secretsmanager.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.secretsmanager.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.SecretsManager.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.SecretsManager.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.ServiceDiscovery/1.21.1": {
+      "sha512": "advWxRg/5++H3sMmkoNFg1g0oCsX7CLgGWqtuBY+HwicWA/UZtADdNlM5jqAio5NmgbATdyUmEcGBwWiGAWC1A==",
+      "type": "package",
+      "path": "amazon.cdk.aws.servicediscovery/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.servicediscovery.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.servicediscovery.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ServiceDiscovery.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.ServiceDiscovery.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.SNS/1.21.1": {
+      "sha512": "3z/ophWXi2BN2MBzHsviHGnSPSmWrRVHccSNqjRpJ3p6l3Uq/MIWM7D3/xiqhQTfBSC2l/kla6Wqq5aOoEoIOA==",
+      "type": "package",
+      "path": "amazon.cdk.aws.sns/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.sns.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.sns.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.SNS.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.SNS.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.SNS.Subscriptions/1.21.1": {
+      "sha512": "I0U5InGPgh6xbDpOYSv4JzxLQp46ASIV/8yx/GXAUUJCoZMKOypSHxdFksJc9xmxUyEAW/u0wFW0nkHvj0jv4w==",
+      "type": "package",
+      "path": "amazon.cdk.aws.sns.subscriptions/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.sns.subscriptions.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.sns.subscriptions.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.SNS.Subscriptions.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.SNS.Subscriptions.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.SQS/1.21.1": {
+      "sha512": "s513DHaxMe/+ZsgCUmWDrwRiy2EN2vQGR7n79G8yXOrxycpBcJX8NGes6ZXUCUOPH6jI3kmLdAvad8a4VDS1iw==",
+      "type": "package",
+      "path": "amazon.cdk.aws.sqs/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.sqs.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.sqs.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.SQS.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.SQS.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.SSM/1.21.1": {
+      "sha512": "Iy6bBkVKLLcnV7rfkzAmPo/2k1W3sjagpbUQii4uxiAEC6wYXXN0gy6m70EaXyNQBgXnztGv9OBt5lSkc4b5MA==",
+      "type": "package",
+      "path": "amazon.cdk.aws.ssm/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.ssm.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.ssm.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.SSM.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.SSM.xml"
+      ]
+    },
+    "Amazon.CDK.AWS.StepFunctions/1.21.1": {
+      "sha512": "gnHvPwDMWs6ceLv0B4SsIaRIsumpr1MvL6ZjrVhfGLRYri0qTu7c5XbMHND1FCulj4K2OHLgZY6hJRpFFCScmg==",
+      "type": "package",
+      "path": "amazon.cdk.aws.stepfunctions/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.aws.stepfunctions.1.21.1.nupkg.sha512",
+        "amazon.cdk.aws.stepfunctions.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.StepFunctions.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.AWS.StepFunctions.xml"
+      ]
+    },
+    "Amazon.CDK.CXAPI/1.21.1": {
+      "sha512": "ma2jW4srrfnQVgK/J6FR7+qNHb1tPEfohr/0jOv1rELy2oh72jOCe3/kAGj2goAxcQS2TmFe2D3KUFs+aHNsCg==",
+      "type": "package",
+      "path": "amazon.cdk.cxapi/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.cxapi.1.21.1.nupkg.sha512",
+        "amazon.cdk.cxapi.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.CXAPI.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.CXAPI.xml"
+      ]
+    },
+    "Amazon.CDK.ECR.Assets/1.21.1": {
+      "sha512": "++HuuOhvJszdyTicj5E0mb0dPXx1ZzxsRC2oPEOQrelt0irFi0el95jgZMDxdXy4h9NQelvPfzjd1vhefUU5+g==",
+      "type": "package",
+      "path": "amazon.cdk.ecr.assets/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.ecr.assets.1.21.1.nupkg.sha512",
+        "amazon.cdk.ecr.assets.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.ECR.Assets.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.ECR.Assets.xml"
+      ]
+    },
+    "Amazon.CDK.RegionInfo/1.21.1": {
+      "sha512": "9YGu8i6tgaHKcrw5YzwfimBfsLAHPyShutp+nOP+F0c4VtH9vj84yduPDc8N0VE44EV6zHYopXsNJNxRD4gJxQ==",
+      "type": "package",
+      "path": "amazon.cdk.regioninfo/1.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.cdk.regioninfo.1.21.1.nupkg.sha512",
+        "amazon.cdk.regioninfo.nuspec",
+        "lib/netcoreapp3.0/Amazon.CDK.RegionInfo.dll",
+        "lib/netcoreapp3.0/Amazon.CDK.RegionInfo.xml"
+      ]
+    },
+    "Amazon.JSII.JsonModel/0.21.1": {
+      "sha512": "O+vqK0Btx3XHYSI/b0HuaC4UMtYw/C9o6InwngeEZgAA9yBeh95YhaWQijDHkIFqx2D5W5IT1LjkdxmpJq+XBg==",
+      "type": "package",
+      "path": "amazon.jsii.jsonmodel/0.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.jsii.jsonmodel.0.21.1.nupkg.sha512",
+        "amazon.jsii.jsonmodel.nuspec",
+        "icon.png",
+        "lib/netcoreapp3.0/Amazon.JSII.JsonModel.dll"
+      ]
+    },
+    "Amazon.JSII.Runtime/0.21.1": {
+      "sha512": "38HKk5kcpxMF/vX44bBiUKCOtqZQCof5ZlJb+V3X9kRi9GlaAF6cGSARHtAq5OE/swS4lQUewGxWjqSVW5rpgQ==",
+      "type": "package",
+      "path": "amazon.jsii.runtime/0.21.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "amazon.jsii.runtime.0.21.1.nupkg.sha512",
+        "amazon.jsii.runtime.nuspec",
+        "icon.png",
+        "lib/netcoreapp3.0/Amazon.JSII.Runtime.dll"
+      ]
+    },
+    "AWSSDK.Core/3.3.104.18": {
+      "sha512": "Drv6Konwck/Sd2cIDqICYb/WfqiKTh24yi/PEqRSjlJLkPH39LAgDq+VHzdViY/eceTkDuuEW6uPp2ppeK+7Og==",
+      "type": "package",
+      "path": "awssdk.core/3.3.104.18",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "awssdk.core.3.3.104.18.nupkg.sha512",
+        "awssdk.core.nuspec",
+        "lib/MonoAndroid10/AWSSDK.Core.XML",
+        "lib/MonoAndroid10/AWSSDK.Core.dll",
+        "lib/MonoAndroid10/AWSSDK.Core.pdb",
+        "lib/MonoTouch10/AWSSDK.Core.XML",
+        "lib/MonoTouch10/AWSSDK.Core.dll",
+        "lib/Xamarin.Mac20/AWSSDK.Core.XML",
+        "lib/Xamarin.Mac20/AWSSDK.Core.dll",
+        "lib/Xamarin.iOS10/AWSSDK.Core.XML",
+        "lib/Xamarin.iOS10/AWSSDK.Core.dll",
+        "lib/net35/AWSSDK.Core.dll",
+        "lib/net35/AWSSDK.Core.pdb",
+        "lib/net35/AWSSDK.Core.xml",
+        "lib/net45/AWSSDK.Core.dll",
+        "lib/net45/AWSSDK.Core.pdb",
+        "lib/net45/AWSSDK.Core.xml",
+        "lib/netstandard1.3/AWSSDK.Core.dll",
+        "lib/netstandard1.3/AWSSDK.Core.pdb",
+        "lib/netstandard1.3/AWSSDK.Core.xml",
+        "lib/netstandard2.0/AWSSDK.Core.dll",
+        "lib/netstandard2.0/AWSSDK.Core.pdb",
+        "lib/netstandard2.0/AWSSDK.Core.xml",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.Core.XML",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.Core.dll",
+        "lib/portable-net45+win8+wpa81+wp8/AWSSDK.Core.pdb",
+        "lib/uap/AWSSDK.Core.XML",
+        "lib/uap/AWSSDK.Core.dll",
+        "lib/uap/AWSSDK.Core.pdb",
+        "lib/win8/AWSSDK.Core.XML",
+        "lib/win8/AWSSDK.Core.dll",
+        "lib/win8/AWSSDK.Core.pdb",
+        "lib/wp8/AWSSDK.Core.XML",
+        "lib/wp8/AWSSDK.Core.dll",
+        "lib/wp8/AWSSDK.Core.pdb",
+        "lib/wpa81/AWSSDK.Core.XML",
+        "lib/wpa81/AWSSDK.Core.dll",
+        "lib/wpa81/AWSSDK.Core.pdb",
+        "tools/account-management.ps1"
+      ]
+    },
+    "Microsoft.Extensions.Configuration/3.1.0": {
+      "sha512": "Lu41BWNmwhKr6LgyQvcYBOge0pPvmiaK8R5UHXX4//wBhonJyWcT2OK1mqYfEM5G7pTf31fPrpIHOT6sN7EGOA==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.xml",
+        "microsoft.extensions.configuration.3.1.0.nupkg.sha512",
+        "microsoft.extensions.configuration.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/3.1.0": {
+      "sha512": "ESz6bVoDQX7sgWdKHF6G9Pq672T8k+19AFb/txDXwdz7MoqaNQj2/in3agm/3qae9V+WvQZH86LLTNVo0it8vQ==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.abstractions/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Abstractions.xml",
+        "microsoft.extensions.configuration.abstractions.3.1.0.nupkg.sha512",
+        "microsoft.extensions.configuration.abstractions.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Microsoft.Extensions.Configuration.Binder/3.1.0": {
+      "sha512": "o9eELDBfNkR7sUtYysFZ1Q7BQ1mYt27DMkups/3vu7xgPyOpMD+iAfrBZFzUXT2iw0fmFb8s1gfNBZS+IgjKdQ==",
+      "type": "package",
+      "path": "microsoft.extensions.configuration.binder/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Binder.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Configuration.Binder.xml",
+        "microsoft.extensions.configuration.binder.3.1.0.nupkg.sha512",
+        "microsoft.extensions.configuration.binder.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection/3.1.0": {
+      "sha512": "KVkv3aF2MQpmGFRh4xRx2CNbc2sjDFk+lH4ySrjWSOS+XoY1Xc+sJphw3N0iYOpoeCCq8976ceVYDH8sdx2qIQ==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/net461/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.xml",
+        "microsoft.extensions.dependencyinjection.3.1.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/3.1.0": {
+      "sha512": "44rDtOf1JXXAFpNT2EXMExaDm/4OJ2RXOL9i9lE4bK427nzC7Exphv+beB6IgluyE2GIoo8zezTStMXI7MQ8WA==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "microsoft.extensions.dependencyinjection.abstractions.3.1.0.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Microsoft.Extensions.Logging/3.1.0": {
+      "sha512": "P+8sKQ8L4ooL79sxxqwFPxGGC3aBrUDLB/dZqhs4J0XjTyrkeeyJQ4D4nzJB6OnAhy78HIIgQ/RbD6upOXLynw==",
+      "type": "package",
+      "path": "microsoft.extensions.logging/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Logging.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Logging.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.xml",
+        "microsoft.extensions.logging.3.1.0.nupkg.sha512",
+        "microsoft.extensions.logging.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Microsoft.Extensions.Logging.Abstractions/3.1.0": {
+      "sha512": "jjo4YXRx6MIpv6DiRxJjSpl+sPP0+5VW0clMEdLyIAz44PPwrDTFrd5PZckIxIXl1kKZ2KK6IL2nkt0+ug2MQg==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.abstractions/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "microsoft.extensions.logging.abstractions.3.1.0.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Microsoft.Extensions.Logging.Configuration/3.1.0": {
+      "sha512": "yW3nIoNM3T5iZg8bRViiCN4+vIU/02l+mlWSvKqWnr0Fd5Uk1zKdT9jBWKEcJhRIWKVWWSpFWXnM5yWoIAy1Eg==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.configuration/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Logging.Configuration.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Logging.Configuration.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Configuration.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Configuration.xml",
+        "microsoft.extensions.logging.configuration.3.1.0.nupkg.sha512",
+        "microsoft.extensions.logging.configuration.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Microsoft.Extensions.Logging.Console/3.1.0": {
+      "sha512": "lkqVlnQqfqr8nmrpy7EnISXy192NEaIb0Xh4zaO8XS/QMiC3RqOAxxeq89JPSmjw+YfecwcikV8UB+NacdgRDg==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.console/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Logging.Console.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Logging.Console.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Console.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Console.xml",
+        "microsoft.extensions.logging.console.3.1.0.nupkg.sha512",
+        "microsoft.extensions.logging.console.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Microsoft.Extensions.Options/3.1.0": {
+      "sha512": "9b6JHY7TAXrSfZ6EEGf+j8XnqKIiMPErfmaNXhJYSCb+BUW2H4RtzkNJvwLJzwgzqBP0wtTjyA6Uw4BPPdmkMw==",
+      "type": "package",
+      "path": "microsoft.extensions.options/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Options.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Options.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.xml",
+        "microsoft.extensions.options.3.1.0.nupkg.sha512",
+        "microsoft.extensions.options.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Microsoft.Extensions.Options.ConfigurationExtensions/3.1.0": {
+      "sha512": "tx6gMKE3rDspA1YZT8SlQJmyt1BaBSl6mNjB3g0ZO6m3NnoavCifXkGeBuDk9Ae4XjW8C+dty52p+0u38jPRIQ==",
+      "type": "package",
+      "path": "microsoft.extensions.options.configurationextensions/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
+        "microsoft.extensions.options.configurationextensions.3.1.0.nupkg.sha512",
+        "microsoft.extensions.options.configurationextensions.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Microsoft.Extensions.Primitives/3.1.0": {
+      "sha512": "LEKAnX7lhUhSoIc2XraCTK3M4IU/LdVUzCe464Sa4+7F4ZJuXHHRzZli2mDbiT4xzAZhgqXbvfnb5+CNDcQFfg==",
+      "type": "package",
+      "path": "microsoft.extensions.primitives/3.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll",
+        "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
+        "microsoft.extensions.primitives.3.1.0.nupkg.sha512",
+        "microsoft.extensions.primitives.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "Newtonsoft.Json/12.0.3": {
+      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "type": "package",
+      "path": "newtonsoft.json/12.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.12.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "AWSSDK.Core >= 3.3.104.18",
+      "Amazon.CDK.AWS.ECS >= 1.21.1",
+      "Amazon.CDK.AWS.ECS.Patterns >= 1.21.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\jbirch\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\jbirch\\source\\repos\\AwsCdkDockerSample\\AwsStack\\AwsStack.csproj",
+      "projectName": "AwsStack",
+      "projectPath": "C:\\Users\\jbirch\\source\\repos\\AwsCdkDockerSample\\AwsStack\\AwsStack.csproj",
+      "packagesPath": "C:\\Users\\jbirch\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jbirch\\source\\repos\\AwsCdkDockerSample\\AwsStack\\obj\\",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
+      ],
+      "configFilePaths": [
+        "C:\\Users\\jbirch\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "dependencies": {
+          "AWSSDK.Core": {
+            "target": "Package",
+            "version": "[3.3.104.18, )"
+          },
+          "Amazon.CDK.AWS.ECS": {
+            "target": "Package",
+            "version": "[1.21.1, )"
+          },
+          "Amazon.CDK.AWS.ECS.Patterns": {
+            "target": "Package",
+            "version": "[1.21.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

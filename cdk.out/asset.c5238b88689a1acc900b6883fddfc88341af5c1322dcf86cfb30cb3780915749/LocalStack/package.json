@@ -1,0 +1,17 @@
+{
+  "name": "studio",
+  "version": "1.0.0",
+  "description": "AWS CDK",
+  "main": "",
+  "scripts": {
+    "start": "nps"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/3dxmedia/studio-production#readme",
+  "devDependencies": {
+    "cdk": "^1.21.1",
+    "nps": "^5.9.12",
+    "yargs": "^15.1.0"
+  }
+}

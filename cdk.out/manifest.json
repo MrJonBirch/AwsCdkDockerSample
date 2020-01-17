@@ -1,0 +1,1520 @@
+{
+  "version": "1.16.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "AppStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://DummyAccountId/us-east-1",
+      "properties": {
+        "templateFile": "AppStack.template.json"
+      },
+      "dependencies": [
+        "DevStack"
+      ],
+      "metadata": {
+        "/AppStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "id": "79452e39b3d4fc2df04cf69f52a637fe5822ba5ef5b86733e471b5089017057d",
+              "packaging": "container-image",
+              "path": "asset.79452e39b3d4fc2df04cf69f52a637fe5822ba5ef5b86733e471b5089017057d",
+              "sourceHash": "79452e39b3d4fc2df04cf69f52a637fe5822ba5ef5b86733e471b5089017057d",
+              "imageNameParameter": "AssetParameters79452e39b3d4fc2df04cf69f52a637fe5822ba5ef5b86733e471b5089017057dImageName3509FBEE",
+              "repositoryName": "cdk/appstackappservicetaskdefwebassetimagedb50cd66",
+              "file": "DockerProject1\\Dockerfile"
+            },
+            "trace": [
+              "Stack.addDockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:381:23)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:60:32)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:36:51)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7",
+              "id": "a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7",
+              "packaging": "zip",
+              "sourceHash": "a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7",
+              "s3BucketParameter": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3Bucket7CBBD48C",
+              "s3KeyParameter": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3VersionKey87E3D057",
+              "artifactHashParameter": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7ArtifactHash3E217B68"
+            },
+            "trace": [
+              "Stack.addFileAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:352:23)",
+              "new Asset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:67:33)",
+              "SingletonFunction.ensureLambda (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:35:16)",
+              "new SingletonFunction (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:17:36)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:23:20)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:36:51)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppCluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppCluster99B78AC1",
+            "trace": [
+              "new Cluster (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\cluster.js:31:25)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppRoleDC883459",
+            "trace": [
+              "new Role (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:36:22)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/LB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceLB2EFD717F",
+            "trace": [
+              "new BaseLoadBalancer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\shared\\base-load-balancer.js:23:26)",
+              "new ApplicationLoadBalancer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-load-balancer.js:16:9)",
+              "new ApplicationLoadBalancedServiceBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:31:85)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:13:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/LB/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceLBSecurityGroupB5DEF339",
+            "trace": [
+              "new SecurityGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:173:30)",
+              "new ApplicationLoadBalancer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-load-balancer.js:21:53)",
+              "new ApplicationLoadBalancedServiceBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:31:85)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:13:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/LB/SecurityGroup/to AppStackAppServiceSecurityGroupD9B6A043:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceLBSecurityGrouptoAppStackAppServiceSecurityGroupD9B6A04380054B5555",
+            "trace": [
+              "SecurityGroup.addEgressRule (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:48:13)",
+              "SecurityGroup.addEgressRule (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:249:19)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:66:31",
+              "ReactiveList.forEachAndForever (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:191:13)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:65:51",
+              "ReactiveList.forEachAndForever (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:191:13)",
+              "Connections.allowTo (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:64:30)",
+              "Connections.allowFrom (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:95:31)",
+              "ApplicationListener.registerConnectable (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-listener.js:212:33)",
+              "ApplicationTargetGroup.registerConnectable (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-target-group.js:75:22)",
+              "Object.attachToApplicationTargetGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\base-service.js:185:29)",
+              "FargateService.attachToApplicationTargetGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\base-service.js:152:47)",
+              "ApplicationTargetGroup.addTarget (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-target-group.js:52:35)",
+              "ApplicationLoadBalancedFargateService.addServiceAsTarget (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:90:26)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:62:14)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/LB/PublicListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceLBPublicListenerB6FF7149",
+            "trace": [
+              "new BaseListener (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\shared\\base-listener.js:12:26)",
+              "new ApplicationListener (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-listener.js:23:9)",
+              "ApplicationLoadBalancer.addListener (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-load-balancer.js:67:16)",
+              "new ApplicationLoadBalancedServiceBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:39:43)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:13:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/LB/PublicListener/ECSGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceLBPublicListenerECSGroup41DB273F",
+            "trace": [
+              "new TargetGroupBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\shared\\base-target-group.js:31:25)",
+              "new ApplicationTargetGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-target-group.js:15:9)",
+              "ApplicationListener.addTargets (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-listener.js:132:23)",
+              "new ApplicationLoadBalancedServiceBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:44:42)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:13:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/LoadBalancerDNS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceLoadBalancerDNS940F3CBE",
+            "trace": [
+              "new ApplicationLoadBalancedServiceBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:74:9)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:13:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/ServiceURL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceServiceURLFB5E6390",
+            "trace": [
+              "new ApplicationLoadBalancedServiceBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:75:9)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:13:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/TaskDef/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceTaskDefD07EA99B",
+            "trace": [
+              "new TaskDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:66:25)",
+              "new FargateTaskDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\fargate\\fargate-task-definition.js:18:9)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:23:35)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/TaskDef/web/AssetImage/AdoptRepository/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceTaskDefwebAssetImageAdoptRepository8294813B",
+            "trace": [
+              "new CustomResource (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-cloudformation\\lib\\custom-resource.js:56:25)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:41:25)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:36:51)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/TaskDef/web/LogGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceTaskDefwebLogGroup066CA1AB",
+            "trace": [
+              "new LogGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-logs\\lib\\log-group.js:191:26)",
+              "AwsLogDriver.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\log-drivers\\aws-log-driver.js:27:48)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:78:50)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:36:51)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/TaskDef/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceTaskDefExecutionRoleD1C756A8",
+            "trace": [
+              "new Role (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:36:22)",
+              "FargateTaskDefinition.obtainExecutionRole (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:200:35)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:26:71)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:36:51)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/TaskDef/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceTaskDefExecutionRoleDefaultPolicy1C514EB9",
+            "trace": [
+              "new Policy (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:146:34)",
+              "Function.addToPrincipal (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:57:65)",
+              "Function.addToPrincipalOrResource (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:31:30)",
+              "AdoptedRepository.grant (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr\\lib\\repository.js:116:26)",
+              "AdoptedRepository.grantPull (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr\\lib\\repository.js:128:26)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:26:26)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:36:51)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/Service/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppService7F8F0CA1",
+            "trace": [
+              "new BaseService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\base-service.js:110:25)",
+              "new FargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\fargate\\fargate-service.js:35:9)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:49:24)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/Service/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceSecurityGroup8261DDA4",
+            "trace": [
+              "new SecurityGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:173:30)",
+              "FargateService.configureAwsVpcNetworking (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\base-service.js:338:29)",
+              "new FargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\fargate\\fargate-service.js:46:14)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:49:24)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AppService/Service/SecurityGroup/from AppStackAppServiceLBSecurityGroup6E7764A6:80": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppServiceSecurityGroupfromAppStackAppServiceLBSecurityGroup6E7764A680C1F39118",
+            "trace": [
+              "SecurityGroup.addIngressRule (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:33:13)",
+              "SecurityGroup.addIngressRule (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:223:19)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:89:31",
+              "ReactiveList.forEachAndForever (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:191:13)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:88:51",
+              "ReactiveList.forEachAndForever (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:191:13)",
+              "Connections.allowFrom (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:87:30)",
+              "ApplicationListener.registerConnectable (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-listener.js:212:33)",
+              "ApplicationTargetGroup.registerConnectable (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-target-group.js:75:22)",
+              "Object.attachToApplicationTargetGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\base-service.js:185:29)",
+              "FargateService.attachToApplicationTargetGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\base-service.js:152:47)",
+              "ApplicationTargetGroup.addTarget (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-target-group.js:52:35)",
+              "ApplicationLoadBalancedFargateService.addServiceAsTarget (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:90:26)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:62:14)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AssetParameters/79452e39b3d4fc2df04cf69f52a637fe5822ba5ef5b86733e471b5089017057d/ImageName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters79452e39b3d4fc2df04cf69f52a637fe5822ba5ef5b86733e471b5089017057dImageName3509FBEE",
+            "trace": [
+              "new DockerImageAssetParameters (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:29:35)",
+              "Stack.addDockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:369:22)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:60:32)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:36:51)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3Bucket7CBBD48C",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:11:36)",
+              "Stack.addFileAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:342:22)",
+              "new Asset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:67:33)",
+              "SingletonFunction.ensureLambda (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:35:16)",
+              "new SingletonFunction (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:17:36)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:23:20)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:36:51)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3VersionKey87E3D057",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:15:35)",
+              "Stack.addFileAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:342:22)",
+              "new Asset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:67:33)",
+              "SingletonFunction.ensureLambda (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:35:16)",
+              "new SingletonFunction (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:17:36)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:23:20)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:36:51)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7ArtifactHash3E217B68",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:19:38)",
+              "Stack.addFileAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:342:22)",
+              "new Asset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:67:33)",
+              "SingletonFunction.ensureLambda (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:35:16)",
+              "new SingletonFunction (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:17:36)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:23:20)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:36:51)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17",
+            "trace": [
+              "new Role (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:36:22)",
+              "new Function (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:59:35)",
+              "SingletonFunction.ensureLambda (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:35:16)",
+              "new SingletonFunction (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:17:36)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:23:20)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:36:51)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleDefaultPolicy6BC8737C",
+            "trace": [
+              "new Policy (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:146:34)",
+              "SingletonFunction.addToRolePolicy (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:38:19)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:31:12)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:36:51)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/AppStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c52BE89E9",
+            "trace": [
+              "new Function (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:69:26)",
+              "SingletonFunction.ensureLambda (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:35:16)",
+              "new SingletonFunction (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:17:36)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:23:20)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:36:51)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ]
+      }
+    },
+    "DevStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://DummyAccountId/us-east-1",
+      "properties": {
+        "templateFile": "DevStack.template.json"
+      },
+      "metadata": {
+        "/DevStack": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "id": "2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969",
+              "packaging": "container-image",
+              "path": "asset.2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969",
+              "sourceHash": "2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969",
+              "imageNameParameter": "AssetParameters2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969ImageNameD8963A71",
+              "repositoryName": "cdk/devstackdevstacktaskdefmysqlassetimage94a6b66f",
+              "file": "LocalStack\\Dockerfile.mysql"
+            },
+            "trace": [
+              "Stack.addDockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:381:23)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:60:32)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7",
+              "id": "a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7",
+              "packaging": "zip",
+              "sourceHash": "a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7",
+              "s3BucketParameter": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3Bucket7CBBD48C",
+              "s3KeyParameter": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3VersionKey87E3D057",
+              "artifactHashParameter": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7ArtifactHash3E217B68"
+            },
+            "trace": [
+              "Stack.addFileAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:352:23)",
+              "new Asset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:67:33)",
+              "SingletonFunction.ensureLambda (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:35:16)",
+              "new SingletonFunction (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:17:36)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:23:20)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "id": "e28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71",
+              "packaging": "container-image",
+              "path": "asset.e28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71",
+              "sourceHash": "e28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71",
+              "imageNameParameter": "AssetParameterse28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71ImageName6A8EEC47",
+              "repositoryName": "cdk/devstackdevstacktaskdefmongodbassetimagede006547",
+              "file": "LocalStack\\Dockerfile.mongo"
+            },
+            "trace": [
+              "Stack.addDockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:381:23)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:60:32)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "id": "15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820",
+              "packaging": "container-image",
+              "path": "asset.15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820",
+              "sourceHash": "15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820",
+              "imageNameParameter": "AssetParameters15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820ImageNameDDEE43ED",
+              "repositoryName": "cdk/devstackdevstacktaskdeflocalstackassetimaged0921c01",
+              "file": "LocalStack\\Dockerfile.localstack"
+            },
+            "trace": [
+              "Stack.addDockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:381:23)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:60:32)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          },
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "id": "c5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749",
+              "packaging": "container-image",
+              "path": "asset.c5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749",
+              "sourceHash": "c5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749",
+              "imageNameParameter": "AssetParametersc5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749ImageName406CFC29",
+              "repositoryName": "cdk/devstackdevstacktaskdefschemabuilderassetimage99ade178",
+              "file": "LocalStack\\Dockerfile"
+            },
+            "trace": [
+              "Stack.addDockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:381:23)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:60:32)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/AppCluster/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AppCluster99B78AC1",
+            "trace": [
+              "new Cluster (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\cluster.js:31:25)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackTaskDef/TaskRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackTaskDefTaskRoleD536D856",
+            "trace": [
+              "new Role (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:36:22)",
+              "new TaskDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:63:43)",
+              "new FargateTaskDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\fargate\\fargate-task-definition.js:18:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackTaskDef/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackTaskDef2D4B928F",
+            "trace": [
+              "new TaskDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:66:25)",
+              "new FargateTaskDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\fargate\\fargate-task-definition.js:18:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackTaskDef/mysql/AssetImage/AdoptRepository/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackTaskDefmysqlAssetImageAdoptRepository178905EB",
+            "trace": [
+              "new CustomResource (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-cloudformation\\lib\\custom-resource.js:56:25)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:41:25)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackTaskDef/ExecutionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackTaskDefExecutionRole927ADE9D",
+            "trace": [
+              "new Role (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:36:22)",
+              "FargateTaskDefinition.obtainExecutionRole (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:200:35)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:26:71)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackTaskDef/ExecutionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackTaskDefExecutionRoleDefaultPolicy22F8C33B",
+            "trace": [
+              "new Policy (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:146:34)",
+              "Function.addToPrincipal (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:57:65)",
+              "Function.addToPrincipalOrResource (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:31:30)",
+              "AdoptedRepository.grant (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr\\lib\\repository.js:116:26)",
+              "AdoptedRepository.grantPull (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr\\lib\\repository.js:128:26)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:26:26)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackTaskDef/mongodb/AssetImage/AdoptRepository/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackTaskDefmongodbAssetImageAdoptRepositoryB7105682",
+            "trace": [
+              "new CustomResource (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-cloudformation\\lib\\custom-resource.js:56:25)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:41:25)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackTaskDef/localstack/AssetImage/AdoptRepository/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackTaskDeflocalstackAssetImageAdoptRepository5A4CA828",
+            "trace": [
+              "new CustomResource (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-cloudformation\\lib\\custom-resource.js:56:25)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:41:25)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackTaskDef/schemaBuilder/AssetImage/AdoptRepository/Resource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackTaskDefschemaBuilderAssetImageAdoptRepository4F6FD247",
+            "trace": [
+              "new CustomResource (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-cloudformation\\lib\\custom-resource.js:56:25)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:41:25)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/AssetParameters/2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969/ImageName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters2f8db98e04d6e99c266b73487e4531e175f81ff738045fd55450c1416fe9e969ImageNameD8963A71",
+            "trace": [
+              "new DockerImageAssetParameters (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:29:35)",
+              "Stack.addDockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:369:22)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:60:32)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3Bucket7CBBD48C",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:11:36)",
+              "Stack.addFileAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:342:22)",
+              "new Asset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:67:33)",
+              "SingletonFunction.ensureLambda (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:35:16)",
+              "new SingletonFunction (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:17:36)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:23:20)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7S3VersionKey87E3D057",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:15:35)",
+              "Stack.addFileAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:342:22)",
+              "new Asset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:67:33)",
+              "SingletonFunction.ensureLambda (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:35:16)",
+              "new SingletonFunction (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:17:36)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:23:20)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/AssetParameters/a65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersa65ac4beaa2b5a7b20eebf3b7c5c1c886b71428afa377e02dab0d10ab3be57e7ArtifactHash3E217B68",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:19:38)",
+              "Stack.addFileAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:342:22)",
+              "new Asset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:67:33)",
+              "SingletonFunction.ensureLambda (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:35:16)",
+              "new SingletonFunction (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:17:36)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:23:20)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/AssetParameters/e28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71/ImageName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameterse28099cc26ad40e5551c44eee32c1534d0a4ffecbb8e8d73b94ae1d2b4132f71ImageName6A8EEC47",
+            "trace": [
+              "new DockerImageAssetParameters (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:29:35)",
+              "Stack.addDockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:369:22)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:60:32)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/AssetParameters/15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820/ImageName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters15f7b8da8e135e1eb59a871303ad7ac2fc34fb8d387eaa4286ce20e8be3fe820ImageNameDDEE43ED",
+            "trace": [
+              "new DockerImageAssetParameters (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:29:35)",
+              "Stack.addDockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:369:22)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:60:32)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/AssetParameters/c5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749/ImageName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParametersc5238b88689a1acc900b6883fddfc88341af5c1322dcf86cfb30cb3780915749ImageName406CFC29",
+            "trace": [
+              "new DockerImageAssetParameters (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:29:35)",
+              "Stack.addDockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\core\\lib\\stack.js:369:22)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:60:32)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleD788AA17",
+            "trace": [
+              "new Role (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:36:22)",
+              "new Function (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:59:35)",
+              "SingletonFunction.ensureLambda (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:35:16)",
+              "new SingletonFunction (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:17:36)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:23:20)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62cServiceRoleDefaultPolicy6BC8737C",
+            "trace": [
+              "new Policy (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:146:34)",
+              "SingletonFunction.addToRolePolicy (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:38:19)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:31:12)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AdoptEcrRepositorydbc60defc59544bcaa5c28c95d68f62c52BE89E9",
+            "trace": [
+              "new Function (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:69:26)",
+              "SingletonFunction.ensureLambda (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:35:16)",
+              "new SingletonFunction (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-lambda\\lib\\singleton-lambda.js:17:36)",
+              "new AdoptedRepository (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\adopted-repository.js:23:20)",
+              "new DockerImageAsset (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecr-assets\\lib\\image-asset.js:74:27)",
+              "AssetImage.bind (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\images\\asset-image.js:20:23)",
+              "new ContainerDefinition (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\container-definition.js:76:40)",
+              "FargateTaskDefinition.addContainer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\task-definition.js:159:16)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7589:25",
+              "Kernel._ensureSync (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8198:20)",
+              "Kernel.invoke (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7588:26)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackService/LB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackServiceLB4C194C2B",
+            "trace": [
+              "new BaseLoadBalancer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\shared\\base-load-balancer.js:23:26)",
+              "new ApplicationLoadBalancer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-load-balancer.js:16:9)",
+              "new ApplicationLoadBalancedServiceBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:31:85)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:13:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackService/LB/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackServiceLBSecurityGroup8C3A7A61",
+            "trace": [
+              "new SecurityGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:173:30)",
+              "new ApplicationLoadBalancer (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-load-balancer.js:21:53)",
+              "new ApplicationLoadBalancedServiceBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:31:85)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:13:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackService/LB/SecurityGroup/to DevStackDevStackServiceSecurityGroupE13EF5D2:3306": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackServiceLBSecurityGrouptoDevStackDevStackServiceSecurityGroupE13EF5D233062F66017F",
+            "trace": [
+              "SecurityGroup.addEgressRule (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:48:13)",
+              "SecurityGroup.addEgressRule (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:249:19)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:66:31",
+              "ReactiveList.forEachAndForever (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:191:13)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:65:51",
+              "ReactiveList.forEachAndForever (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:191:13)",
+              "Connections.allowTo (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:64:30)",
+              "Connections.allowFrom (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:95:31)",
+              "ApplicationListener.registerConnectable (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-listener.js:212:33)",
+              "ApplicationTargetGroup.registerConnectable (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-target-group.js:75:22)",
+              "Object.attachToApplicationTargetGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\base-service.js:185:29)",
+              "FargateService.attachToApplicationTargetGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\base-service.js:152:47)",
+              "ApplicationTargetGroup.addTarget (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-target-group.js:52:35)",
+              "ApplicationLoadBalancedFargateService.addServiceAsTarget (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:90:26)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:62:14)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackService/LB/PublicListener/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackServiceLBPublicListenerDADE29AF",
+            "trace": [
+              "new BaseListener (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\shared\\base-listener.js:12:26)",
+              "new ApplicationListener (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-listener.js:23:9)",
+              "ApplicationLoadBalancer.addListener (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-load-balancer.js:67:16)",
+              "new ApplicationLoadBalancedServiceBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:39:43)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:13:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackService/LB/PublicListener/ECSGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackServiceLBPublicListenerECSGroup11507B86",
+            "trace": [
+              "new TargetGroupBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\shared\\base-target-group.js:31:25)",
+              "new ApplicationTargetGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-target-group.js:15:9)",
+              "ApplicationListener.addTargets (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-listener.js:132:23)",
+              "new ApplicationLoadBalancedServiceBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:44:42)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:13:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackService/LoadBalancerDNS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackServiceLoadBalancerDNS2DA4E493",
+            "trace": [
+              "new ApplicationLoadBalancedServiceBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:74:9)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:13:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackService/ServiceURL": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackServiceServiceURLF254FD07",
+            "trace": [
+              "new ApplicationLoadBalancedServiceBase (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:75:9)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:13:9)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackService/Service/Service": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackService319AF02B",
+            "trace": [
+              "new BaseService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\base-service.js:110:25)",
+              "new FargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\fargate\\fargate-service.js:35:9)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:49:24)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackService/Service/SecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackServiceSecurityGroup1A43CA9B",
+            "trace": [
+              "new SecurityGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:173:30)",
+              "FargateService.configureAwsVpcNetworking (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\base-service.js:338:29)",
+              "new FargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\fargate\\fargate-service.js:46:14)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:49:24)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ],
+        "/DevStack/DevStackService/Service/SecurityGroup/from DevStackDevStackServiceLBSecurityGroup6E090AA5:3306": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DevStackServiceSecurityGroupfromDevStackDevStackServiceLBSecurityGroup6E090AA5330690D98828",
+            "trace": [
+              "SecurityGroup.addIngressRule (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:33:13)",
+              "SecurityGroup.addIngressRule (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\security-group.js:223:19)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:89:31",
+              "ReactiveList.forEachAndForever (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:191:13)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:88:51",
+              "ReactiveList.forEachAndForever (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:191:13)",
+              "Connections.allowFrom (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ec2\\lib\\connections.js:87:30)",
+              "ApplicationListener.registerConnectable (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-listener.js:212:33)",
+              "ApplicationTargetGroup.registerConnectable (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-target-group.js:75:22)",
+              "Object.attachToApplicationTargetGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\base-service.js:185:29)",
+              "FargateService.attachToApplicationTargetGroup (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs\\lib\\base\\base-service.js:152:47)",
+              "ApplicationTargetGroup.addTarget (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-elasticloadbalancingv2\\lib\\alb\\application-target-group.js:52:35)",
+              "ApplicationLoadBalancedFargateService.addServiceAsTarget (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\base\\application-load-balanced-service-base.js:90:26)",
+              "new ApplicationLoadBalancedFargateService (C:\\Users\\jbirch\\AppData\\Local\\Temp\\jsii-kernel-775nYK\\node_modules\\@aws-cdk\\aws-ecs-patterns\\lib\\fargate\\application-load-balanced-fargate-service.js:62:14)",
+              "C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:8222:20)",
+              "Kernel._create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7762:26)",
+              "Kernel.create (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7509:21)",
+              "KernelHost.processRequest (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7296:28)",
+              "KernelHost.run (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7236:14)",
+              "Immediate._onImmediate (C:\\Users\\jbirch\\AppData\\Local\\Temp\\0c0qdl3v.pyz\\jsii-runtime.js:7239:37)",
+              "processImmediate (internal/timers.js:439:21)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/cx-api": "1.21.1",
+      "@aws-cdk/core": "1.21.1",
+      "@aws-cdk/region-info": "1.21.1",
+      "@aws-cdk/aws-iam": "1.21.1",
+      "@aws-cdk/aws-cloudwatch": "1.21.1",
+      "@aws-cdk/aws-kms": "1.21.1",
+      "@aws-cdk/aws-ssm": "1.21.1",
+      "@aws-cdk/aws-ec2": "1.21.1",
+      "@aws-cdk/aws-elasticloadbalancing": "1.21.1",
+      "@aws-cdk/aws-events": "1.21.1",
+      "@aws-cdk/aws-s3": "1.21.1",
+      "@aws-cdk/aws-logs": "1.21.1",
+      "@aws-cdk/aws-route53": "1.21.1",
+      "@aws-cdk/assets": "1.21.1",
+      "@aws-cdk/aws-s3-assets": "1.21.1",
+      "@aws-cdk/aws-sqs": "1.21.1",
+      "@aws-cdk/aws-lambda": "1.21.1",
+      "@aws-cdk/aws-sns": "1.21.1",
+      "@aws-cdk/aws-cloudformation": "1.21.1",
+      "@aws-cdk/aws-certificatemanager": "1.21.1",
+      "@aws-cdk/aws-elasticloadbalancingv2": "1.21.1",
+      "@aws-cdk/aws-autoscaling-common": "1.21.1",
+      "@aws-cdk/aws-autoscaling": "1.21.1",
+      "@aws-cdk/aws-applicationautoscaling": "1.21.1",
+      "@aws-cdk/aws-servicediscovery": "1.21.1",
+      "@aws-cdk/aws-ecr": "1.21.1",
+      "@aws-cdk/aws-sam": "1.21.1",
+      "@aws-cdk/aws-secretsmanager": "1.21.1",
+      "@aws-cdk/aws-sns-subscriptions": "1.21.1",
+      "@aws-cdk/aws-autoscaling-hooktargets": "1.21.1",
+      "@aws-cdk/aws-ecr-assets": "1.21.1",
+      "@aws-cdk/aws-apigateway": "1.21.1",
+      "@aws-cdk/aws-cloudfront": "1.21.1",
+      "@aws-cdk/aws-route53-targets": "1.21.1",
+      "@aws-cdk/aws-ecs": "1.21.1",
+      "@aws-cdk/aws-codecommit": "1.21.1",
+      "@aws-cdk/aws-codebuild": "1.21.1",
+      "@aws-cdk/aws-codepipeline": "1.21.1",
+      "@aws-cdk/aws-stepfunctions": "1.21.1",
+      "@aws-cdk/aws-events-targets": "1.21.1",
+      "@aws-cdk/aws-ecs-patterns": "1.21.1",
+      "jsii-runtime": "DotNet/3.1.1/.NETCoreApp,Version=v3.0/1.0.0.0"
+    }
+  },
+  "missing": [
+    {
+      "key": "vpc-provider:account=DummyAccountId:filter.isDefault=true:region=us-east-1:returnAsymmetricSubnets=true",
+      "props": {
+        "account": "DummyAccountId",
+        "region": "us-east-1",
+        "filter": {
+          "isDefault": "true"
+        },
+        "returnAsymmetricSubnets": true
+      },
+      "provider": "vpc-provider"
+    }
+  ]
+}
