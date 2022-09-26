@@ -10,6 +10,6 @@
   },
   "homepage": "https://bitbucket.org/3dxmedia/studio-production#readme",
   "devDependencies": {
-    "cdk": "^1.21.1"
+    "cdk": "^1.174.0"
   }
 }
