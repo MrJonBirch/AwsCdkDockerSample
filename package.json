@@ -9,6 +9,6 @@
     "synth": "cdk synth dotnet run -p ./AwsStack/AwsStack.csproj"
   },
   "devDependencies": {
-    "cdk": "^1.21.1"
+    "cdk": "^1.174.0"
   }
 }
